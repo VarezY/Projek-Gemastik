@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Buttons/IDKArtboard 12@3x.png" type="Texture" id=1]
+[ext_resource path="res://Scene/Buttons/LevelButton.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Fonts/Monserrat_48.tres" type="DynamicFont" id=3]
+
+[node name="TextureButton" type="TextureButton"]
+margin_left = 251.941
+margin_top = 291.941
+margin_right = 355.941
+margin_bottom = 395.941
+rect_min_size = Vector2( 100, 100 )
+texture_normal = ExtResource( 1 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level" type="Label" parent="."]
+margin_left = 19.1543
+margin_top = 20.4907
+margin_right = 85.1543
+margin_bottom = 80.4907
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0.811765, 1, 1 )
+text = "00"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="." to="." method="_on_TextureButton_pressed"]
