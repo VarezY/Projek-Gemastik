@@ -1,116 +1,17 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/Tileset/IsoLanscape.tres" type="TileSet" id=1]
-[ext_resource path="res://Scene/Game/Andy.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Vehicles/carSedan_0011.png" type="Texture" id=3]
-[ext_resource path="res://Scene/Path2D.gd" type="Script" id=4]
-[ext_resource path="res://Assets/lightColored_NW.png" type="Texture" id=5]
-[ext_resource path="res://Assets/lightColored_SW.png" type="Texture" id=6]
+[ext_resource path="res://Scene/Buttons/Horn.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scene/TextureButton.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scene/Cars.gd" type="Script" id=8]
-[ext_resource path="res://Scene/Duchbag.gd" type="Script" id=9]
-[ext_resource path="res://Assets/Vehicles/carSedan_0007.png" type="Texture" id=10]
-[ext_resource path="res://Scene/Area2D.gd" type="Script" id=11]
-[ext_resource path="res://Assets/Buttons/HornArtboard 7@2x.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Buttons/HornArtboard 7 copy@2x.png" type="Texture" id=13]
-
-[sub_resource type="Curve2D" id=1]
-bake_interval = 25.61
-_data = {
-"points": PoolVector2Array( -35.4168, -22.7454, 35.4168, 22.7454, 57.2689, 51.9383, -0.538352, -11.0727, 0.538352, 11.0727, 409.057, 233.522, -8.52624, -11.9169, 8.52624, 11.9169, 371.894, 270.982, 16.79, -9.93495, -16.79, 9.93495, 396.272, 307.55, 7.86793, -7.55855, -7.86793, 7.55855, 296.082, 363.443, 0.34112, -13.0186, -0.34112, 13.0186, 401.292, 425.832, 1.68046, -13.308, -1.68046, 13.308, 311.117, 487.954, 19.5997, -14.061, -19.5997, 14.061, 335.617, 531.454, 0, 0, 0, 0, 287.031, 558.533 )
-}
-
-[sub_resource type="Curve2D" id=3]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 859, -20.5, 0, 0, 0, 0, 415.731, 201.085 )
-}
-
-[sub_resource type="Curve2D" id=4]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1117.18, 340.572, 10.7093, -3.77976, -10.7093, 3.77976, 1090.34, 331.626, 34.6478, -3.77976, -34.6478, 3.77976, 1038.68, 344.855, 15.1191, 3.1498, -15.1191, -3.1498, 976.948, 334.146, 0, 0, 0, 0, 947.97, 339.185, 32.7579, 3.77976, -32.7579, -3.77976, 769.061, 413.521, 0, 0, 0, 0, -97.5239, -9.82328 )
-}
-
-[sub_resource type="CircleShape2D" id=5]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
-mode = 1
-tile_set = ExtResource( 1 )
-cell_size = Vector2( 129, 64 )
-cell_y_sort = true
-format = 1
-tile_data = PoolIntArray( -655350, 75, 0, -589814, 75, 0, -524286, 75, 0, -524285, 75, 0, -524284, 75, 0, -524283, 75, 0, -524282, 75, 0, -524281, 75, 0, -524280, 75, 0, -524278, 75, 0, -458752, 75, 0, -458751, 75, 0, -458750, 75, 0, -458749, 75, 0, -458748, 75, 0, -458747, 75, 0, -458746, 82, 0, -458745, 75, 0, -458744, 75, 0, -458743, 75, 0, -327681, 15, 0, -393216, 75, 0, -393215, 75, 0, -393214, 75, 0, -393213, 75, 0, -393212, 75, 0, -393211, 75, 0, -393210, 82, 0, -393209, 75, 0, -393208, 75, 0, -393207, 75, 0, -393206, 75, 0, -393205, 75, 0, -262145, 15, 0, -327680, 75, 0, -327679, 75, 0, -327678, 75, 0, -327677, 75, 0, -327676, 75, 0, -327675, 75, 0, -327674, 82, 0, -327673, 75, 0, -327672, 75, 0, -327671, 75, 0, -327670, 75, 0, -327669, 75, 0, -196609, 15, 0, -262144, 75, 0, -262143, 75, 0, -262142, 75, 0, -262141, 85, 0, -262140, 65, 0, -262139, 65, 0, -262138, 30, 0, -262137, 65, 0, -262136, 65, 0, -262135, 93, 0, -262134, 75, 0, -262133, 75, 0, -262132, 75, 0, -262131, 123, 0, -262130, 75, 0, -262129, 75, 0, -131074, 1, 0, -131073, 1, 0, -196608, 1, 0, -196607, 1, 0, -196606, 1, 0, -196605, 86, 0, -196604, 75, 0, -196603, 75, 0, -196602, 82, 0, -196601, 75, 0, -196600, 75, 0, -196599, 57, 0, -196598, 75, 0, -196597, 75, 0, -196596, 123, 0, -196595, 127, 0, -196594, 75, 0, -196593, 75, 0, -196592, 75, 0, -65538, 75, 0, -65537, 75, 0, -131072, 75, 0, -131071, 75, 0, -131070, 75, 0, -131069, 75, 0, -131068, 75, 0, -131067, 75, 0, -131066, 82, 0, -131065, 75, 0, -131064, 75, 0, -131063, 57, 0, -131062, 75, 0, -131061, 75, 0, -131060, 82, 0, -131059, 75, 0, -131058, 75, 0, -131057, 75, 0, -131056, 75, 0, -1, 75, 0, -65536, 75, 0, -65535, 75, 0, -65534, 75, 0, -65533, 75, 0, -65532, 75, 0, -65531, 75, 0, -65530, 113, 0, -65529, 75, 0, -65528, 75, 0, -65527, 57, 0, -65526, 75, 0, -65525, 75, 0, -65524, 82, 0, -65523, 75, 0, -65522, 75, 0, -65521, 75, 0, -65520, 75, 0, 65535, 74, 0, 0, 74, 0, 1, 74, 0, 2, 74, 0, 3, 74, 0, 4, 74, 0, 5, 107, 0, 6, 90, 0, 7, 74, 0, 8, 107, 0, 9, 38, 0, 10, 74, 0, 11, 74, 0, 12, 127, 0, 13, 75, 0, 14, 75, 0, 15, 75, 0, 16, 75, 0, 131071, 75, 0, 65536, 75, 0, 65537, 75, 0, 65538, 75, 0, 65539, 75, 0, 65540, 75, 0, 65541, 75, 0, 65542, 125, 0, 65543, 126, 0, 65544, 75, 0, 65545, 57, 0, 65546, 75, 0, 65547, 75, 0, 65548, 75, 0, 65549, 75, 0, 65550, 75, 0, 65551, 75, 0, 65552, 75, 0, 131072, 75, 0, 131073, 105, 0, 131074, 74, 0, 131075, 126, 0, 131076, 75, 0, 131077, 75, 0, 131078, 75, 0, 131079, 82, 0, 131080, 75, 0, 131081, 62, 0, 131082, 72, 0, 131083, 72, 0, 131084, 72, 0, 131085, 79, 0, 131086, 75, 0, 131087, 75, 0, 131088, 75, 0, 131089, 75, 0, 262143, 75, 0, 196608, 75, 0, 196609, 75, 0, 196610, 75, 0, 196611, 96, 0, 196612, 74, 0, 196613, 74, 0, 196614, 74, 0, 196615, 104, 0, 196616, 74, 0, 196617, 126, 0, 196618, 67, 0, 196619, 75, 0, 196620, 75, 0, 196621, 78, 0, 196622, 79, 0, 196623, 75, 0, 262144, 75, 0, 262145, 75, 0, 262146, 75, 0, 262147, 75, 0, 262148, 75, 0, 262149, 75, 0, 262150, 75, 0, 262151, 75, 0, 262152, 75, 0, 262153, 113, 0, 262154, 67, 0, 262155, 75, 0, 262156, 75, 0, 262157, 75, 0, 262158, 78, 0, 262159, 79, 0, 327681, 75, 0, 327682, 75, 0, 327683, 75, 0, 327684, 75, 0, 327685, 75, 0, 327686, 75, 0, 327687, 75, 0, 327688, 75, 0, 327689, 118, 0, 327690, 126, 0, 327691, 75, 0, 327692, 75, 0, 327693, 75, 0, 327694, 75, 0, 327695, 75, 0, 393217, 75, 0, 393218, 75, 0, 393219, 75, 0, 393220, 75, 0, 393221, 75, 0, 393222, 75, 0, 393223, 75, 0, 393224, 75, 0, 393225, 75, 0, 393226, 117, 0, 393227, 75, 0, 393228, 75, 0, 393229, 75, 0, 393230, 75, 0, 393231, 75, 0, 458754, 75, 0, 458755, 75, 0, 458756, 75, 0, 458757, 75, 0, 458758, 75, 0, 458759, 75, 0, 458760, 75, 0, 458761, 75, 0, 458762, 75, 0, 458763, 75, 0, 458764, 75, 0, 458765, 75, 0, 458766, 75, 0, 458767, 75, 0, 524291, 75, 0, 524292, 75, 0, 524293, 75, 0, 524294, 75, 0, 524295, 75, 0, 524296, 75, 0, 524297, 75, 0, 524298, 75, 0, 524299, 75, 0, 524300, 75, 0, 524301, 75, 0, 524302, 75, 0, 524303, 75, 0, 524304, 75, 0, 589828, 75, 0, 589829, 75, 0 )
+[node name="Stop" parent="." instance=ExtResource( 7 )]
 
-[node name="Andy" type="Path2D" parent="."]
-position = Vector2( -17.1174, -11.4541 )
-curve = SubResource( 1 )
-script = ExtResource( 4 )
+[node name="Horn" parent="." instance=ExtResource( 1 )]
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Andy"]
-position = Vector2( 57.2689, 51.9383 )
-rotation = 0.508444
-loop = false
-
-[node name="Andy" parent="Andy/PathFollow2D" instance=ExtResource( 2 )]
-rotation = -0.47652
-
-[node name="lightColored_SW" type="Sprite" parent="Andy"]
-position = Vector2( 400.934, 169.655 )
-texture = ExtResource( 6 )
-
-[node name="lightColored_NW" type="Sprite" parent="."]
-position = Vector2( 393.885, 220.08 )
-texture = ExtResource( 5 )
-
-[node name="TextureButton" parent="." instance=ExtResource( 7 )]
-
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource( 3 )
-script = ExtResource( 8 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( 859, -20.5 )
-rotation = 2.67884
-rotate = false
-loop = false
-
-[node name="Sprite" type="Sprite" parent="Path2D/PathFollow2D"]
-position = Vector2( -0.281189, 0.56369 )
-rotation = -2.64941
-scale = Vector2( 0.241348, 0.241348 )
-texture = ExtResource( 3 )
-
-[node name="Duchbag" type="Path2D" parent="."]
-curve = SubResource( 4 )
-script = ExtResource( 9 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Duchbag"]
-position = Vector2( 1117.18, 340.572 )
-rotation = -2.52654
-rotate = false
-
-[node name="Sprite" type="Sprite" parent="Duchbag/PathFollow2D"]
-rotation = 2.51676
-scale = Vector2( 0.208094, 0.208094 )
-texture = ExtResource( 10 )
-
-[node name="Area2D" type="Area2D" parent="Duchbag/PathFollow2D"]
-collision_mask = 0
-script = ExtResource( 11 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Duchbag/PathFollow2D/Area2D"]
-shape = SubResource( 5 )
-
-[node name="TextureButton2" type="TextureButton" parent="."]
-margin_left = 970.0
-margin_top = 548.921
-margin_right = 1062.0
-margin_bottom = 640.921
-texture_normal = ExtResource( 12 )
-texture_pressed = ExtResource( 13 )
-expand = true
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="toggled" from="TextureButton" to="Andy" method="_on_TextureButton_toggled"]

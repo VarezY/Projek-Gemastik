@@ -1,12 +1,51 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/BackgroundArtboard 1@2x.png" type="Texture" id=1]
-[ext_resource path="res://Scene/Buttons/Level 1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scene/Buttons/Level2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scene/Buttons/LevelButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/IDKArtboard 7@3x.png" type="Texture" id=4]
+[ext_resource path="res://Scene/Game/Circle.gd" type="Script" id=5]
+[ext_resource path="res://Scene/Game/LevelSelect.gd" type="Script" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Load_level"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 0.392292 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -0.0353609, -0.25, 0, 0.25, 0, 7.46115, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.8 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -0.0353608, -0.25, 0, 0.25, 0, 7.46115, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.8 )
+}
 
 [node name="LevelSelect" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -39,17 +78,21 @@ size_flags_vertical = 3
 custom_constants/separation = 116
 alignment = 1
 
-[node name="Level 1" parent="Center/ButtonsTop" instance=ExtResource( 2 )]
+[node name="Level 01" parent="Center/ButtonsTop" instance=ExtResource( 2 )]
 margin_left = 292.0
 margin_top = 0.0
 margin_right = 392.0
 margin_bottom = 100.0
+scene_to_load = "res://Scene/Example.tscn"
+level = "01"
 
-[node name="Level4" parent="Center/ButtonsTop" instance=ExtResource( 3 )]
+[node name="Level 02" parent="Center/ButtonsTop" instance=ExtResource( 2 )]
 margin_left = 508.0
 margin_top = 0.0
 margin_right = 608.0
 margin_bottom = 100.0
+scene_to_load = "res://Scene/Example2.tscn"
+level = "02"
 
 [node name="ButtonsDown" type="HBoxContainer" parent="Center"]
 margin_top = 122.0
@@ -58,3 +101,15 @@ margin_bottom = 210.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
+
+[node name="Circle" type="Sprite" parent="."]
+visible = false
+position = Vector2( 640, 360 )
+scale = Vector2( -0.0353609, -0.0353608 )
+texture = ExtResource( 4 )
+script = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Circle"]
+anims/Load_level = SubResource( 1 )
+[connection signal="fade_finished" from="Circle" to="." method="_on_Circle_fade_finished"]
+[connection signal="animation_finished" from="Circle/AnimationPlayer" to="Circle" method="_on_AnimationPlayer_animation_finished"]

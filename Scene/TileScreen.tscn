@@ -63,13 +63,14 @@ margin_top = 38.0
 margin_bottom = 98.0
 scene_to_load = "res://Scene/Game/LevelSelect.tscn"
 
-[node name="ContinouButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
+[node name="InfoButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
 margin_top = 118.0
 margin_bottom = 178.0
 
-[node name="OptionsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
+[node name="QuitButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
 margin_top = 198.0
 margin_bottom = 258.0
+scene_to_load = "res://Scene/Quit.tscn"
 
 [node name="CreditLabel" type="Label" parent="Menu"]
 margin_top = 495.0

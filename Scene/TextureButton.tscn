@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Buttons/Test2Artboard 4@4x.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Buttons/Test2Artboard 2@4x.png" type="Texture" id=2]
 
-[node name="TextureButton" type="TextureButton"]
+[node name="Stop" type="TextureButton"]
 margin_left = 1099.0
 margin_top = 543.0
 margin_right = 1214.0
