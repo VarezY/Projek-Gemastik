@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Layout/Sign.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Side/sign3.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Font/Nunito34EBold.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/GUI/paused/lanjut_selected.png" type="Texture" id=4]
+[ext_resource path="res://Assets/GUI/paused/lanjut.png" type="Texture" id=5]
+
+[node name="Sign" type="Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.352941 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 150.0
+margin_top = 150.0
+margin_right = -150.0
+margin_bottom = -150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+margin_right = 366.0
+margin_bottom = 420.0
+size_flags_horizontal = 3
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_left = 370.0
+margin_top = 111.0
+margin_right = 980.0
+margin_bottom = 308.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Ini adalah rambu untuk tidak berhenti 
+di jalan atau di pinggir jalan sampai
+rambu berikutnya.
+"
+align = 1
+
+[node name="ContinueSignButton" type="TextureButton" parent="."]
+margin_left = 1162.0
+margin_top = 33.0
+margin_right = 1231.0
+margin_bottom = 103.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

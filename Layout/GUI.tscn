@@ -1,0 +1,517 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://Assets/Font/Nunito32Bold.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Layout/Kecelakaan.gd" type="Script" id=2]
+[ext_resource path="res://Layout/Layout.gd" type="Script" id=3]
+[ext_resource path="res://Layout/Pause.gd" type="Script" id=4]
+[ext_resource path="res://Layout/NextLevel.gd" type="Script" id=5]
+[ext_resource path="res://Layout/GUI.gd" type="Script" id=6]
+[ext_resource path="res://Layout/Sign.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Side/sign3.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Font/Nunito34EBold.tres" type="DynamicFont" id=9]
+[ext_resource path="res://Assets/GUI/level success/next_level_default.png" type="Texture" id=10]
+[ext_resource path="res://Assets/GUI/level success/replay_selected.png" type="Texture" id=11]
+[ext_resource path="res://Assets/GUI/level success/poin.png" type="Texture" id=12]
+[ext_resource path="res://Assets/GUI/btn_pause_selected.png" type="Texture" id=13]
+[ext_resource path="res://Assets/GUI/paused/lanjut_selected.png" type="Texture" id=14]
+[ext_resource path="res://Assets/GUI/rem.png" type="Texture" id=15]
+[ext_resource path="res://Assets/GUI/paused/lanjut.png" type="Texture" id=16]
+[ext_resource path="res://Assets/GUI/paused/ulang_selected.png" type="Texture" id=17]
+[ext_resource path="res://Assets/GUI/paused/menu_selected.png" type="Texture" id=18]
+[ext_resource path="res://Assets/GUI/level success/replay_default.png" type="Texture" id=19]
+[ext_resource path="res://Assets/GUI/gas.png" type="Texture" id=20]
+[ext_resource path="res://Assets/GUI/level success/berhasil.png" type="Texture" id=21]
+[ext_resource path="res://Assets/GUI/level success/home_default.png" type="Texture" id=22]
+[ext_resource path="res://Assets/GUI/level success/next_level_selected.png" type="Texture" id=23]
+[ext_resource path="res://Assets/GUI/paused/ulang.png" type="Texture" id=24]
+[ext_resource path="res://Assets/GUI/level success/rect_score.png" type="Texture" id=25]
+[ext_resource path="res://Assets/GUI/level success/home_selected.png" type="Texture" id=26]
+[ext_resource path="res://Assets/GUI/btn_pause.png" type="Texture" id=27]
+[ext_resource path="res://Assets/GUI/paused/menu.png" type="Texture" id=28]
+[ext_resource path="res://Assets/GUI/level success/panel.png" type="Texture" id=29]
+[ext_resource path="res://Assets/GUI/level success/star.png" type="Texture" id=30]
+[ext_resource path="res://Assets/GUI/level success/star_grey.png" type="Texture" id=31]
+[ext_resource path="res://Assets/IDKArtboard 7@3x.png" type="Texture" id=32]
+[ext_resource path="res://Layout/Circle.gd" type="Script" id=33]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 31 ) ],
+"loop": true,
+"name": "Off",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 30 ) ],
+"loop": true,
+"name": "On",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Down"
+length = 0.8
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.8 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 730, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.8 )
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Up"
+length = 0.8
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.8 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 730, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.8 )
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.8
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 7.5, -0.25, 0, 0.25, 0, 1e-05, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.8 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 7.5, -0.25, 0, 0.25, 0, 1e-05, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.8 )
+}
+
+[sub_resource type="Animation" id=5]
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0.25, 0, 7.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.2, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0.25, 0, 7.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.2, 1 )
+}
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource( 6 )
+
+[node name="CarButton" type="TextureButton" parent="."]
+margin_left = 1100.0
+margin_top = 550.0
+margin_right = 1213.0
+margin_bottom = 663.0
+toggle_mode = true
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 20 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseButton" type="TextureButton" parent="."]
+margin_left = 1170.01
+margin_top = 36.9763
+margin_right = 1236.01
+margin_bottom = 104.976
+texture_normal = ExtResource( 27 )
+texture_pressed = ExtResource( 13 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Layout" type="Control" parent="."]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="Control" parent="Layout"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Layout/Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.352941 )
+
+[node name="CenterContainer" type="CenterContainer" parent="Layout/Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Layout/Pause/CenterContainer"]
+margin_left = 471.0
+margin_top = 317.0
+margin_right = 808.0
+margin_bottom = 403.0
+custom_constants/separation = 42
+alignment = 1
+
+[node name="HomeButton" type="TextureButton" parent="Layout/Pause/CenterContainer/HBoxContainer"]
+margin_right = 85.0
+margin_bottom = 86.0
+texture_normal = ExtResource( 28 )
+texture_pressed = ExtResource( 18 )
+
+[node name="RestartButton" type="TextureButton" parent="Layout/Pause/CenterContainer/HBoxContainer"]
+margin_left = 127.0
+margin_right = 211.0
+margin_bottom = 86.0
+texture_normal = ExtResource( 24 )
+texture_pressed = ExtResource( 17 )
+
+[node name="ContinueButton" type="TextureButton" parent="Layout/Pause/CenterContainer/HBoxContainer"]
+margin_left = 253.0
+margin_right = 337.0
+margin_bottom = 86.0
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 14 )
+
+[node name="Kecelakaan" type="Control" parent="Layout"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Layout/Kecelakaan"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.352941 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Layout/Kecelakaan"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Layout/Kecelakaan/CenterContainer"]
+margin_left = 400.0
+margin_top = 278.0
+margin_right = 880.0
+margin_bottom = 441.0
+custom_constants/separation = 48
+
+[node name="Label" type="Label" parent="Layout/Kecelakaan/CenterContainer/VBoxContainer"]
+margin_right = 480.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 1 )
+text = "Kamu telah mengalami kecelakaan! Ulangi level ini."
+
+[node name="CenterContainer" type="CenterContainer" parent="Layout/Kecelakaan/CenterContainer/VBoxContainer"]
+margin_top = 77.0
+margin_right = 480.0
+margin_bottom = 163.0
+
+[node name="RestartButton" type="TextureButton" parent="Layout/Kecelakaan/CenterContainer/VBoxContainer/CenterContainer"]
+margin_left = 198.0
+margin_right = 282.0
+margin_bottom = 86.0
+texture_normal = ExtResource( 24 )
+texture_pressed = ExtResource( 17 )
+
+[node name="NextLevel" type="Control" parent="Layout"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Layout/NextLevel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.352941 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Layout/NextLevel"]
+margin_left = 428.0
+margin_top = 159.0
+margin_right = 851.0
+margin_bottom = 560.0
+texture = ExtResource( 29 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="Layout/NextLevel"]
+margin_left = 473.0
+margin_top = 378.0
+margin_right = 806.0
+margin_bottom = 465.0
+texture = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Layout/NextLevel"]
+margin_left = 554.0
+margin_top = 425.256
+margin_right = 726.0
+margin_bottom = 470.256
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.0313726, 0.0823529, 0.596078, 1 )
+text = "90 / 100"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect4" type="TextureRect" parent="Layout/NextLevel"]
+margin_left = 614.0
+margin_top = 389.872
+margin_right = 666.0
+margin_bottom = 412.872
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="Layout/NextLevel"]
+margin_left = 544.0
+margin_top = 306.037
+margin_right = 735.0
+margin_bottom = 348.037
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="MarginContainer" parent="Layout/NextLevel"]
+margin_left = 420.0
+margin_top = 499.0
+margin_right = 858.0
+margin_bottom = 592.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Layout/NextLevel/Buttons"]
+margin_right = 438.0
+margin_bottom = 93.0
+custom_constants/separation = 40
+alignment = 1
+
+[node name="HomeButton" type="TextureButton" parent="Layout/NextLevel/Buttons/HBoxContainer"]
+margin_left = 51.0
+margin_right = 136.0
+margin_bottom = 93.0
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 26 )
+
+[node name="RestartButton" type="TextureButton" parent="Layout/NextLevel/Buttons/HBoxContainer"]
+margin_left = 176.0
+margin_right = 261.0
+margin_bottom = 93.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 11 )
+
+[node name="NextButton" type="TextureButton" parent="Layout/NextLevel/Buttons/HBoxContainer"]
+margin_left = 301.0
+margin_right = 386.0
+margin_bottom = 93.0
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 23 )
+
+[node name="Stars" type="MarginContainer" parent="Layout/NextLevel"]
+margin_left = 407.713
+margin_top = 108.825
+margin_right = 847.713
+margin_bottom = 286.825
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Star1" type="AnimatedSprite" parent="Layout/NextLevel/Stars"]
+position = Vector2( 107.943, 117.468 )
+frames = SubResource( 1 )
+animation = "On"
+
+[node name="Star2" type="AnimatedSprite" parent="Layout/NextLevel/Stars"]
+position = Vector2( 226.998, 90.4818 )
+frames = SubResource( 1 )
+animation = "On"
+
+[node name="Star3" type="AnimatedSprite" parent="Layout/NextLevel/Stars"]
+position = Vector2( 347.641, 119.055 )
+frames = SubResource( 1 )
+animation = "Off"
+
+[node name="Sign" type="Control" parent="Layout"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 730.0
+margin_bottom = 730.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Layout/Sign"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.352941 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Layout/Sign"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 150.0
+margin_top = 150.0
+margin_right = -150.0
+margin_bottom = -150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Layout/Sign/HBoxContainer"]
+margin_right = 488.0
+margin_bottom = 420.0
+size_flags_horizontal = 3
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Layout/Sign/HBoxContainer"]
+margin_left = 492.0
+margin_top = 86.0
+margin_right = 980.0
+margin_bottom = 333.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 9 )
+text = "Ini adalah rambu untuk tidak berhenti di jalan atau di pinggir jalan sampai rambu berikutnya.
+"
+align = 1
+autowrap = true
+
+[node name="ContinueSignButton" type="TextureButton" parent="Layout/Sign"]
+margin_left = 1162.0
+margin_top = 33.0
+margin_right = 1231.0
+margin_bottom = 103.0
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 14 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Layout/Sign"]
+anims/Down = SubResource( 2 )
+anims/Up = SubResource( 3 )
+
+[node name="Circle" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -105.5
+margin_top = -106.5
+margin_right = 105.5
+margin_bottom = 106.5
+rect_scale = Vector2( 7.5, 7.5 )
+rect_pivot_offset = Vector2( 105, 105 )
+texture = ExtResource( 32 )
+expand = true
+stretch_mode = 1
+script = ExtResource( 33 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Circle"]
+anims/load_Level = SubResource( 4 )
+anims/next_Level = SubResource( 5 )
+[connection signal="toggled" from="CarButton" to="." method="_on_CarButton_toggled"]
+[connection signal="pressed" from="PauseButton" to="." method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="Layout/Pause/CenterContainer/HBoxContainer/HomeButton" to="." method="_on_HomeButton_pressed"]
+[connection signal="pressed" from="Layout/Pause/CenterContainer/HBoxContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="Layout/Pause/CenterContainer/HBoxContainer/ContinueButton" to="." method="_on_ContinueButton_pressed"]
+[connection signal="pressed" from="Layout/Kecelakaan/CenterContainer/VBoxContainer/CenterContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="Layout/NextLevel/Buttons/HBoxContainer/HomeButton" to="." method="_on_HomeButton_pressed"]
+[connection signal="pressed" from="Layout/NextLevel/Buttons/HBoxContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="Layout/NextLevel/Buttons/HBoxContainer/NextButton" to="." method="_on_NextButton_pressed"]
+[connection signal="pressed" from="Layout/Sign/ContinueSignButton" to="." method="_on_ContinueSignButton_pressed"]
+[connection signal="animation_finished" from="Layout/Sign/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="loadLevel" from="Circle" to="." method="_on_Circle_loadLevel"]
+[connection signal="next" from="Circle" to="." method="_on_Circle_next"]
+[connection signal="animation_finished" from="Circle/AnimationPlayer" to="Circle" method="_on_AnimationPlayer_animation_finished"]

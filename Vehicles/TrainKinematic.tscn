@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/Car/Kereta/train_front1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Car/Kereta/train_back2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Car/Kereta/train_back.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Car/Kereta/train_front3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Car/Kereta/train_front2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Car/Kereta/train_front4.png" type="Texture" id=6]
+[ext_resource path="res://Vehicles/TrainKinematic.gd" type="Script" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "SW",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "NW",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "NE",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "SE",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Left",
+"speed": 5.0
+} ]
+
+[node name="Train" type="KinematicBody2D"]
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="YSort" type="YSort" parent="."]
+position = Vector2( -178.299, 122.861 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Head" type="AnimatedSprite" parent="YSort"]
+frames = SubResource( 1 )
+animation = "Idle"
+
+[node name="Body1" type="AnimatedSprite" parent="YSort"]
+position = Vector2( 283.146, -165.006 )
+frames = SubResource( 2 )
+animation = "Left"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -324.099, 207.572, 228.776, -120.557, 324.668, -44.1437, -225.211, 267.504 )

@@ -1,0 +1,102 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/Car/Kereta/train_front1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Car/Kereta/train_back2.png" type="Texture" id=2]
+[ext_resource path="res://Vehicles/TrainNode.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Car/Kereta/train_back.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Car/Kereta/train_front3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Car/Kereta/train_front2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Car/Kereta/train_front4.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "SW",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "NW",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "NE",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "SE",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Left",
+"speed": 5.0
+} ]
+
+[node name="Train" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Head" type="KinematicBody2D" parent="YSort"]
+position = Vector2( -627.756, 368.614 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Head"]
+position = Vector2( -17, -6 )
+frames = SubResource( 1 )
+animation = "SW"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Head"]
+polygon = PoolVector2Array( -144.354, 86.3533, 53.6356, -31.0264, 145.559, 32.6132, -46.7736, 147.165 )
+
+[node name="Camera2D" type="Camera2D" parent="YSort/Head"]
+
+[node name="Body1" type="KinematicBody2D" parent="YSort"]
+position = Vector2( -359.354, 196.922 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Body1"]
+frames = SubResource( 2 )
+animation = "Left"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Body1"]
+polygon = PoolVector2Array( -223.56, 127.075, -128.808, 183.643, 214.846, -11.5181, 128.579, -72.3293 )
+
+[node name="Body2" type="KinematicBody2D" parent="YSort"]
+position = Vector2( -1.13257, -7.4156 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Body2"]
+frames = SubResource( 2 )
+animation = "Left"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Body2"]
+polygon = PoolVector2Array( -223.56, 127.075, -128.808, 183.643, 214.846, -11.5181, 128.579, -72.3293 )
+
+[node name="Body3" type="KinematicBody2D" parent="YSort"]
+position = Vector2( 356.248, -214.276 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Body3"]
+frames = SubResource( 2 )
+animation = "Left"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Body3"]
+polygon = PoolVector2Array( -223.56, 127.075, -128.808, 183.643, 214.846, -11.5181, 128.579, -72.3293 )

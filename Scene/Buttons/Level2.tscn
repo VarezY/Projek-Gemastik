@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://Scene/Buttons/LevelButton.tscn" type="PackedScene" id=1]
-
-[node name="Level2" instance=ExtResource( 1 )]
-scene_to_load = "res://Scene/Example2.tscn"
-
-[node name="Level" parent="." index="0"]
-text = "02"
