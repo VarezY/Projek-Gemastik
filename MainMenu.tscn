@@ -1,17 +1,136 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://BackgroundArtboard 1@2x.png" type="Texture" id=1]
+[ext_resource path="res://Assets/NewGUI/main menu/bg.png" type="Texture" id=1]
+[ext_resource path="res://Assets/NewGUI/main menu/panel.png" type="Texture" id=2]
+[ext_resource path="res://Assets/NewGUI/main menu/pengaturan_default.png" type="Texture" id=3]
+[ext_resource path="res://Assets/NewGUI/main menu/TitleArtboard 5.png" type="Texture" id=4]
+[ext_resource path="res://MainMenu.gd" type="Script" id=5]
+[ext_resource path="res://Assets/NewGUI/main menu/mulai_clicked.png" type="Texture" id=6]
+[ext_resource path="res://Assets/NewGUI/main menu/info_clicked.png" type="Texture" id=7]
+[ext_resource path="res://Assets/NewGUI/main menu/keluar_default.png" type="Texture" id=8]
+[ext_resource path="res://Assets/NewGUI/main menu/mulai_default.png" type="Texture" id=9]
+[ext_resource path="res://Assets/NewGUI/main menu/info_default.png" type="Texture" id=10]
+[ext_resource path="res://Assets/NewGUI/main menu/pengaturan_clicked.png" type="Texture" id=11]
+[ext_resource path="res://Assets/NewGUI/main menu/keluar_clicked.png" type="Texture" id=12]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -706.0
+margin_top = -656.0
+margin_right = 705.0
+margin_bottom = 655.0
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Overlay" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.313726 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 20
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="TextureRect" parent="VBoxContainer"]
+margin_top = 80.0
+margin_right = 1280.0
+margin_bottom = 270.0
+texture = ExtResource( 4 )
+stretch_mode = 4
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 290.0
+margin_right = 1280.0
+margin_bottom = 640.0
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/CenterContainer2"]
+margin_left = 465.0
+margin_right = 815.0
+margin_bottom = 350.0
+size_flags_horizontal = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Panel" type="TextureRect" parent="VBoxContainer/CenterContainer2/CenterContainer"]
+margin_right = 350.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 350, 350 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+
+[node name="Buttons" type="VBoxContainer" parent="VBoxContainer/CenterContainer2/CenterContainer"]
+margin_left = 50.0
+margin_top = 32.0
+margin_right = 300.0
+margin_bottom = 317.0
+custom_constants/separation = 15
+alignment = 1
+
+[node name="ButtonMulai" type="TextureButton" parent="VBoxContainer/CenterContainer2/CenterContainer/Buttons"]
+margin_right = 250.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 250, 60 )
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 6 )
+expand = true
+stretch_mode = 5
+
+[node name="ButtonInfo" type="TextureButton" parent="VBoxContainer/CenterContainer2/CenterContainer/Buttons"]
+margin_top = 75.0
+margin_right = 250.0
+margin_bottom = 135.0
+rect_min_size = Vector2( 250, 60 )
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 7 )
+expand = true
+stretch_mode = 5
+
+[node name="ButtonSetting" type="TextureButton" parent="VBoxContainer/CenterContainer2/CenterContainer/Buttons"]
+margin_top = 150.0
+margin_right = 250.0
+margin_bottom = 210.0
+rect_min_size = Vector2( 250, 60 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 11 )
+expand = true
+stretch_mode = 5
+
+[node name="ButtonKeluar" type="TextureButton" parent="VBoxContainer/CenterContainer2/CenterContainer/Buttons"]
+margin_top = 225.0
+margin_right = 250.0
+margin_bottom = 285.0
+rect_min_size = Vector2( 250, 60 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 12 )
+expand = true
+stretch_mode = 5
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 640, 360 )
+[connection signal="pressed" from="VBoxContainer/CenterContainer2/CenterContainer/Buttons/ButtonMulai" to="." method="_on_ButtonMulai_pressed"]
+[connection signal="pressed" from="VBoxContainer/CenterContainer2/CenterContainer/Buttons/ButtonInfo" to="." method="_on_ButtonInfo_pressed"]
+[connection signal="pressed" from="VBoxContainer/CenterContainer2/CenterContainer/Buttons/ButtonSetting" to="." method="_on_ButtonSetting_pressed"]
+[connection signal="pressed" from="VBoxContainer/CenterContainer2/CenterContainer/Buttons/ButtonKeluar" to="." method="_on_ButtonKeluar_pressed"]

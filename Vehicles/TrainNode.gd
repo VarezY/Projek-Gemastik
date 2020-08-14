@@ -1,14 +1,16 @@
-extends Node2D
+extends Path2D
+class_name Kereta
+#=-=-=-=-=-=-=-=
+var tween
+#=-=-=-=-=-=-=-=
 
+func followPath(time : int):
+	tween = Tween.new()
+	add_child(tween)
+	tween.interpolate_property($TrainFollow, "unit_offset", 0, 1, time, tween.TRANS_LINEAR, tween.EASE_IN_OUT)
+	tween.set_repeat(false)
+	tween.start()
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Layout/Layout.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Level 3.gd" type="Script" id=2]
+
+[node name="Level 3" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+[connection signal="ButtonCarGo" from="GUI" to="." method="_on_GUI_ButtonCarGo"]
+[connection signal="ButtonCarStop" from="GUI" to="." method="_on_GUI_ButtonCarStop"]
+[connection signal="ButtonContinue" from="GUI" to="." method="_on_GUI_ButtonContinue"]
+[connection signal="ButtonHome" from="GUI" to="." method="_on_GUI_ButtonHome"]
+[connection signal="ButtonNext" from="GUI" to="." method="_on_GUI_ButtonNext"]
+[connection signal="ButtonPause" from="GUI" to="." method="_on_GUI_ButtonPause"]
+[connection signal="ButtonRestart" from="GUI" to="." method="_on_GUI_ButtonRestart"]
+[connection signal="ButtonSign" from="GUI" to="." method="_on_GUI_ButtonSign"]
+[connection signal="CircleLoad" from="GUI" to="." method="_on_GUI_CircleLoad"]
+[connection signal="CircleNext" from="GUI" to="." method="_on_GUI_CircleNext"]
+[connection signal="SignDown" from="GUI" to="." method="_on_GUI_SignDown"]

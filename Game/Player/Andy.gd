@@ -6,6 +6,8 @@ onready var AndyCar = $AndyPath/AndyCar
 onready var CarAnime = $AndyPath/AndyCar/AnimatedSprite
 onready var CameraAndy = $AndyPath/AndyCar/Pivot
 
+signal Tabrakan
+
 var curves
 var points
 var tujuan_Mobil
@@ -34,12 +36,17 @@ func _process(delta):
 		velocity.x = lerp(velocity.x, 0, 0.05)
 		velocity.y = lerp(velocity.y, 0, 0.05)
 	AndyCar.move_and_slide(velocity)
+	for slide in AndyCar.get_slide_count():
+			var collision = AndyCar.get_slide_collision(slide)
+			if collision.collider.name == "Car":
+				print("Tabrakan")
+				emit_signal("Tabrakan")
+			#print("I collided with ", collision.collider.name)
 	
 func Moving(position : Vector2):
 	tujuan_Mobil = AndyCar.global_position.direction_to(position)
 	
 	velocity = tujuan_Mobil * min(MaksimalKecepatan, start)
-	#velocity = tujuan_Mobil * MaksimalKecepatan
 	if AndyCar.global_position.distance_to(position) < 20:
 		i += 1
 	

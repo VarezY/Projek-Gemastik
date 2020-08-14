@@ -5,6 +5,9 @@
 
 [node name="Level 2" type="Node"]
 script = ExtResource( 2 )
+level = "res://Game/Level 3.tscn"
+
+[node name="Node2D" type="Node2D" parent="."]
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
 [connection signal="ButtonCarGo" from="GUI" to="." method="_on_GUI_ButtonCarGo"]

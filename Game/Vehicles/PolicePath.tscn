@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Car/police_back.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Car/police_front2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Car/police_front.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Car/police_back2.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "NW",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "NE",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "SW",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "SE",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 40.3887
+
+[node name="PoliceCar" type="PathFollow2D"]
+position = Vector2( 1957.58, 847.567 )
+rotate = false
+
+[node name="Police" type="KinematicBody2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Police"]
+scale = Vector2( 0.6, 0.6 )
+frames = SubResource( 6 )
+animation = "NE"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Police"]
+shape = SubResource( 7 )

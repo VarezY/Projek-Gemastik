@@ -9,10 +9,35 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Path2D",
+"class": "Car",
+"language": "GDScript",
+"path": "res://Game/Vehicles/Car.gd"
+}, {
+"base": "Area2D",
+"class": "Danger",
+"language": "GDScript",
+"path": "res://Game/Area/Danger.gd"
+}, {
+"base": "Path2D",
+"class": "Kereta",
+"language": "GDScript",
+"path": "res://Vehicles/TrainNode.gd"
+}, {
+"base": "Node",
+"class": "KeretaApi",
+"language": "GDScript",
+"path": "res://Game/Vehicles/KeretaApi.gd"
+}, {
 "base": "Node",
 "class": "Level",
 "language": "GDScript",
 "path": "res://Game/Level.gd"
+}, {
+"base": "Path2D",
+"class": "Police",
+"language": "GDScript",
+"path": "res://Game/Vehicles/Police.gd"
 }, {
 "base": "TextureButton",
 "class": "Sign",
@@ -25,7 +50,12 @@ _global_script_classes=[ {
 "path": "res://Vehicles/TrainPaths.gd"
 } ]
 _global_script_class_icons={
+"Car": "",
+"Danger": "",
+"Kereta": "",
+"KeretaApi": "",
 "Level": "",
+"Police": "",
 "Sign": "",
 "TrainPaths": ""
 }
@@ -34,7 +64,7 @@ _global_script_class_icons={
 
 config/name="Gemastik Cleaner"
 run/main_scene="res://SplashScreen.tscn"
-boot_splash/image="res://Godot Splashsceen.png"
+boot_splash/image="res://Godot SplashsceenRev2.png"
 config/icon="res://icon.png"
 
 [debug]
@@ -45,7 +75,6 @@ settings/stdout/print_fps=true
 
 window/size/width=1280
 window/size/height=720
-window/vsync/use_vsync=false
 window/stretch/mode="2d"
 
 [rendering]
