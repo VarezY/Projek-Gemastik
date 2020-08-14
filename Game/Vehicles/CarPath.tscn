@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Car/black_back.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Car/black_front2.png" type="Texture" id=4]
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
@@ -17,18 +17,18 @@ animations = [ {
 "name": "NE",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "SW",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "SE",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "SW",
+"speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=2]
 radius = 28.1109
 
 [node name="CarPath" type="PathFollow2D"]
@@ -37,11 +37,19 @@ rotate = false
 
 [node name="Car" type="KinematicBody2D" parent="."]
 scale = Vector2( 0.6, 0.6 )
+collision_layer = 2147483649
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Car"]
 scale = Vector2( 0.4, 0.4 )
-frames = SubResource( 4 )
+frames = SubResource( 1 )
 animation = "NW"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Car"]
-shape = SubResource( 5 )
+shape = SubResource( 2 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Car"]
+rotation = -2.61799
+enabled = true
+cast_to = Vector2( 150, 0 )
+collision_mask = 30
+collide_with_areas = true

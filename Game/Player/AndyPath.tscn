@@ -17,6 +17,11 @@ animations = [ {
 "name": "NE",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "SE",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "Idle",
@@ -25,11 +30,6 @@ animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "SW",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "SE",
 "speed": 5.0
 } ]
 
@@ -42,6 +42,8 @@ rotate = false
 
 [node name="AndyCar" type="KinematicBody2D" parent="."]
 scale = Vector2( 0.6, 0.6 )
+collision_layer = 2147483679
+collision_mask = 31
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AndyCar"]
 scale = Vector2( 0.4, 0.4 )

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sign.png-c7d546504cadf5c36a1f8d63dd055328.stex"
+path="res://.import/ambulance_front.png-78ee9bdfcf1518c5290371524a5781bd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Side/sign.png"
-dest_files=[ "res://.import/sign.png-c7d546504cadf5c36a1f8d63dd055328.stex" ]
+source_file="res://Assets/Car/ambulance_front.png"
+dest_files=[ "res://.import/ambulance_front.png-78ee9bdfcf1518c5290371524a5781bd.stex" ]
 
 [params]
 

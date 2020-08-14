@@ -6,6 +6,7 @@ export(int) var MaksimalKecepatan = 150
 onready var car = $CarPath/Car
 onready var caranime = $CarPath/Car/AnimatedSprite
 onready var carpath = $CarPath
+onready var carRay = $CarPath/Car/RayCast2D
 
 var curves
 var points
@@ -23,13 +24,23 @@ func _ready():
 	points = curves.get_point_count()
 
 func _process(delta):
-	if i < points:
-		var point_position = curves.get_point_position(i)
-		start += ACC
-		Moving(point_position)
-		AnimeCar()
+	if carRay.is_colliding():
+		rem = true
 	else:
-		set_process(false)
+		rem = false
+	if !rem:
+		if i < points:
+			var point_position = curves.get_point_position(i)
+			start += ACC
+			Moving(point_position)
+			AnimeCar()
+		else:
+			set_process(false)
+	else:
+		start = 0
+		velocity.x = lerp(velocity.x, 0, 0.4)
+		velocity.y = lerp(velocity.y, 0, 0.4)
+		pass
 	caranime.play(direction)
 	car.move_and_slide(velocity)
 	
@@ -43,11 +54,15 @@ func Moving(position : Vector2):
 func AnimeCar():
 	if tujuan_Mobil.x > 0 and tujuan_Mobil.y > 0:
 		direction = "SE"
+		carRay.rotation_degrees = 30
 	elif tujuan_Mobil.x < 0 and tujuan_Mobil.y < 0:
 		direction = "NW"
+		carRay.rotation_degrees = -150
 	elif tujuan_Mobil.x > 0 and tujuan_Mobil.y < 0:
 		direction = "NE"
+		carRay.rotation_degrees = -30
 	elif tujuan_Mobil.x < 0 and tujuan_Mobil.y > 0:
 		direction = "SW"
+		carRay.rotation_degrees = 150
 	else:
 		direction = "SW"

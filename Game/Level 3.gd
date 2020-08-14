@@ -8,7 +8,10 @@ extends Level
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Node2D/YSort/Andy/AndyPath/AndyCar.set_collision_layer_bit(0, false)
+	$Node2D/YSort/Andy/AndyPath/AndyCar.set_collision_mask_bit(0, false)
+	
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,13 +20,18 @@ func _ready():
 
 
 func _on_GUI_ButtonCarGo():
-	pass # Replace with function body.
+	$Node2D/Area2D/Stop.disabled = true
+	$Node2D/YSort/Andy.set_process(true)
 
 
 func _on_GUI_ButtonCarStop():
-	pass # Replace with function body.
+	$Node2D/YSort/Andy.set_process(false)
 
 
 func _on_GUI_CircleLoad():
 	print("Anime LoadLevel Selesai")
 
+
+
+func _on_Andy_Tabrakan():
+	print("Tabrakan")

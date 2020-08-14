@@ -7,7 +7,7 @@
 [ext_resource path="res://Layout/NextLevel.gd" type="Script" id=5]
 [ext_resource path="res://Layout/GUI.gd" type="Script" id=6]
 [ext_resource path="res://Layout/Sign.gd" type="Script" id=7]
-[ext_resource path="res://Assets/Side/sign3.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Side/IsoSide/ditutup_left.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Font/Nunito34EBold.tres" type="DynamicFont" id=9]
 [ext_resource path="res://Assets/NewGUI/level success/replay_clicked.png" type="Texture" id=10]
 [ext_resource path="res://Assets/NewGUI/level success/next_level_clicked.png" type="Texture" id=11]
@@ -425,7 +425,7 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="Layout/Sign/HBoxContainer"]
-margin_right = 488.0
+margin_right = 487.0
 margin_bottom = 420.0
 size_flags_horizontal = 3
 texture = ExtResource( 8 )
@@ -433,9 +433,9 @@ expand = true
 stretch_mode = 6
 
 [node name="Label" type="Label" parent="Layout/Sign/HBoxContainer"]
-margin_left = 492.0
+margin_left = 491.0
 margin_top = 86.0
-margin_right = 980.0
+margin_right = 979.0
 margin_bottom = 333.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 9 )
