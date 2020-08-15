@@ -65,11 +65,8 @@ _global_script_class_icons={
 config/name="Gemastik Cleaner"
 run/main_scene="res://SplashScreen.tscn"
 boot_splash/image="res://Godot SplashsceenRev2.png"
-config/icon="res://icon.png"
-
-[debug]
-
-settings/stdout/print_fps=true
+boot_splash/bg_color=Color( 0.721569, 0.721569, 0.721569, 1 )
+config/icon="res://Assets/GameIcon.png"
 
 [display]
 
@@ -80,5 +77,6 @@ window/stretch/mode="2d"
 [rendering]
 
 quality/2d/use_nvidia_rect_flicker_workaround=true
+threads/thread_model=2
 quality/depth/hdr=false
 environment/default_environment="res://default_env.tres"

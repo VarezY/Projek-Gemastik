@@ -13,7 +13,7 @@ func _ready():
 	$Node2D/Lampu1.play()
 	$Node2D/Lampu2.play()
 	$Node2D/YSort/TrainPath2.tween.stop_all()
-	
+	$GUI/Layout/NextLevel/TextureProgress.get_value()
 
 func _on_GUI_CircleLoad():
 	
@@ -21,7 +21,6 @@ func _on_GUI_CircleLoad():
 
 func _on_GUI_ButtonCarStop():
 	AndyCar.rem = true
-	
 
 func _on_GUI_ButtonCarGo():
 	AndyCar.start = 0

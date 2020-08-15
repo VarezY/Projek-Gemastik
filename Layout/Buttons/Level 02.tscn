@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Layout/LevelButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/NewGUI/level/2_default.png" type="Texture" id=2]
+[ext_resource path="res://Assets/NewGUI/level/2_clicked.png" type="Texture" id=3]
+
+[node name="Level 02" instance=ExtResource( 1 )]
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )

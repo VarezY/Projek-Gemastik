@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Layout/LevelButton.gd" type="Script" id=1]
+[ext_resource path="res://Assets/NewGUI/level/stars_grey_group.png" type="Texture" id=2]
+[ext_resource path="res://Assets/NewGUI/level/1_default.png" type="Texture" id=3]
+[ext_resource path="res://Assets/NewGUI/level/star_group.png" type="Texture" id=4]
+[ext_resource path="res://Assets/NewGUI/level/1_clicked.png" type="Texture" id=5]
+[ext_resource path="res://Assets/NewGUI/level/locked_button.png" type="Texture" id=6]
+
+[node name="Level" type="TextureButton"]
+margin_left = 317.0
+margin_right = 382.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 65, 65 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
+texture_disabled = ExtResource( 6 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 3.0
+margin_right = -2.0
+margin_bottom = 23.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 4 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,236 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/NewGUI/main menu/bg.png" type="Texture" id=1]
+[ext_resource path="res://Assets/NewGUI/main menu/panel.png" type="Texture" id=2]
+[ext_resource path="res://Layout/Buttons/Level 01.tscn" type="PackedScene" id=3]
+[ext_resource path="res://LevelSelect.gd" type="Script" id=4]
+[ext_resource path="res://Layout/Buttons/Level 02.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Layout/Buttons/Level 03.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/NewGUI/level/5_default.png" type="Texture" id=7]
+[ext_resource path="res://Assets/NewGUI/level/5_clicked.png" type="Texture" id=8]
+[ext_resource path="res://Assets/NewGUI/level/4_clicked.png" type="Texture" id=9]
+[ext_resource path="res://Assets/NewGUI/level/4_default.png" type="Texture" id=10]
+
+[node name="LevelSelect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -699.0
+margin_top = -393.0
+margin_right = 699.0
+margin_bottom = 393.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Overlay" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.196078 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CenterPanel" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="TextureRect" parent="CenterPanel"]
+margin_left = 190.0
+margin_top = 85.0
+margin_right = 1090.0
+margin_bottom = 635.0
+rect_min_size = Vector2( 900, 550 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+
+[node name="Buttons" type="VBoxContainer" parent="CenterPanel"]
+margin_left = 290.0
+margin_top = 144.0
+margin_right = 990.0
+margin_bottom = 575.0
+rect_min_size = Vector2( 700, 60 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 57
+alignment = 1
+
+[node name="Row1" type="HBoxContainer" parent="CenterPanel/Buttons"]
+margin_right = 700.0
+margin_bottom = 65.0
+custom_constants/separation = 86
+alignment = 1
+
+[node name="Level 01" parent="CenterPanel/Buttons/Row1" groups=[
+"Buttons",
+] instance=ExtResource( 3 )]
+margin_left = 15.0
+margin_right = 80.0
+levelTujuan = "res://Game/Level 1.tscn"
+
+[node name="Level 02" parent="CenterPanel/Buttons/Row1" groups=[
+"Buttons",
+] instance=ExtResource( 5 )]
+margin_left = 166.0
+margin_right = 231.0
+disabled = true
+levelTujuan = "res://Game/Level 2.tscn"
+
+[node name="Level 03" parent="CenterPanel/Buttons/Row1" groups=[
+"Buttons",
+] instance=ExtResource( 6 )]
+disabled = true
+
+[node name="Level 04" parent="CenterPanel/Buttons/Row1" groups=[
+"Buttons",
+] instance=ExtResource( 6 )]
+margin_left = 468.0
+margin_right = 533.0
+disabled = true
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 9 )
+
+[node name="Level 05" parent="CenterPanel/Buttons/Row1" groups=[
+"Buttons",
+] instance=ExtResource( 6 )]
+margin_left = 619.0
+margin_right = 684.0
+disabled = true
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+
+[node name="Row2" type="HBoxContainer" parent="CenterPanel/Buttons"]
+margin_top = 122.0
+margin_right = 700.0
+margin_bottom = 187.0
+custom_constants/separation = 86
+alignment = 1
+
+[node name="Level 06" parent="CenterPanel/Buttons/Row2" groups=[
+"Buttons",
+] instance=ExtResource( 3 )]
+margin_left = 15.0
+margin_right = 80.0
+disabled = true
+
+[node name="Level 07" parent="CenterPanel/Buttons/Row2" groups=[
+"Buttons",
+] instance=ExtResource( 5 )]
+margin_left = 166.0
+margin_right = 231.0
+disabled = true
+
+[node name="Level 08" parent="CenterPanel/Buttons/Row2" groups=[
+"Buttons",
+] instance=ExtResource( 6 )]
+disabled = true
+
+[node name="Level 09" parent="CenterPanel/Buttons/Row2" groups=[
+"Buttons",
+] instance=ExtResource( 6 )]
+margin_left = 468.0
+margin_right = 533.0
+disabled = true
+
+[node name="Level 10" parent="CenterPanel/Buttons/Row2" groups=[
+"Buttons",
+] instance=ExtResource( 6 )]
+margin_left = 619.0
+margin_right = 684.0
+disabled = true
+
+[node name="Row3" type="HBoxContainer" parent="CenterPanel/Buttons"]
+margin_top = 244.0
+margin_right = 700.0
+margin_bottom = 309.0
+custom_constants/separation = 86
+alignment = 1
+
+[node name="Level 11" parent="CenterPanel/Buttons/Row3" groups=[
+"Buttons",
+] instance=ExtResource( 3 )]
+margin_left = 15.0
+margin_right = 80.0
+disabled = true
+
+[node name="Level 12" parent="CenterPanel/Buttons/Row3" groups=[
+"Buttons",
+] instance=ExtResource( 5 )]
+margin_left = 166.0
+margin_right = 231.0
+disabled = true
+
+[node name="Level 13" parent="CenterPanel/Buttons/Row3" groups=[
+"Buttons",
+] instance=ExtResource( 6 )]
+disabled = true
+
+[node name="Level 14" parent="CenterPanel/Buttons/Row3" groups=[
+"Buttons",
+] instance=ExtResource( 6 )]
+margin_left = 468.0
+margin_right = 533.0
+disabled = true
+
+[node name="Level 15" parent="CenterPanel/Buttons/Row3" groups=[
+"Buttons",
+] instance=ExtResource( 6 )]
+margin_left = 619.0
+margin_right = 684.0
+disabled = true
+
+[node name="Row4" type="HBoxContainer" parent="CenterPanel/Buttons"]
+margin_top = 366.0
+margin_right = 700.0
+margin_bottom = 431.0
+custom_constants/separation = 86
+alignment = 1
+
+[node name="Level 16" parent="CenterPanel/Buttons/Row4" groups=[
+"Buttons",
+] instance=ExtResource( 3 )]
+margin_left = 15.0
+margin_right = 80.0
+disabled = true
+
+[node name="Level 17" parent="CenterPanel/Buttons/Row4" groups=[
+"Buttons",
+] instance=ExtResource( 5 )]
+margin_left = 166.0
+margin_right = 231.0
+disabled = true
+
+[node name="Level 18" parent="CenterPanel/Buttons/Row4" groups=[
+"Buttons",
+] instance=ExtResource( 6 )]
+disabled = true
+
+[node name="Level 19" parent="CenterPanel/Buttons/Row4" groups=[
+"Buttons",
+] instance=ExtResource( 6 )]
+margin_left = 468.0
+margin_right = 533.0
+disabled = true
+
+[node name="Level 20" parent="CenterPanel/Buttons/Row4" groups=[
+"Buttons",
+] instance=ExtResource( 6 )]
+margin_left = 619.0
+margin_right = 684.0
+disabled = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Assets/Font/Nunito32Bold.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Layout/Kecelakaan.gd" type="Script" id=2]
@@ -13,9 +13,7 @@
 [ext_resource path="res://Assets/NewGUI/level success/next_level_clicked.png" type="Texture" id=11]
 [ext_resource path="res://Assets/NewGUI/level success/panel.png" type="Texture" id=12]
 [ext_resource path="res://Assets/NewGUI/pause/menu_default.png" type="Texture" id=13]
-[ext_resource path="res://Assets/GUI/paused/lanjut_selected.png" type="Texture" id=14]
 [ext_resource path="res://Assets/NewGUI/rem.png" type="Texture" id=15]
-[ext_resource path="res://Assets/GUI/paused/lanjut.png" type="Texture" id=16]
 [ext_resource path="res://Assets/NewGUI/level success/home_clicked.png" type="Texture" id=17]
 [ext_resource path="res://Assets/NewGUI/pause/lanjut_clicked.png" type="Texture" id=18]
 [ext_resource path="res://Assets/NewGUI/level success/poin.png" type="Texture" id=19]
@@ -380,7 +378,6 @@ margin_left = 464.96
 margin_top = 122.022
 margin_right = 810.96
 margin_bottom = 289.022
-value = 50.0
 texture_under = ExtResource( 31 )
 texture_progress = ExtResource( 21 )
 nine_patch_stretch = true
@@ -388,14 +385,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Tween" type="Tween" parent="Layout/NextLevel"]
+
 [node name="Sign" type="Control" parent="Layout"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1.7818
-margin_top = 727.33
-margin_right = 1.78174
-margin_bottom = 727.33
+margin_right = -0.00012207
+margin_bottom = 6.10352e-05
 script = ExtResource( 7 )
 __meta__ = {
 "_edit_group_": true,
@@ -449,8 +446,6 @@ margin_left = 1162.0
 margin_top = 33.0
 margin_right = 1231.0
 margin_bottom = 103.0
-texture_normal = ExtResource( 16 )
-texture_pressed = ExtResource( 14 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false

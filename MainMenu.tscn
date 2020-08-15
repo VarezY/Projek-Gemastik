@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/NewGUI/main menu/bg.png" type="Texture" id=1]
 [ext_resource path="res://Assets/NewGUI/main menu/panel.png" type="Texture" id=2]
 [ext_resource path="res://Assets/NewGUI/main menu/pengaturan_default.png" type="Texture" id=3]
-[ext_resource path="res://Assets/NewGUI/main menu/TitleArtboard 5.png" type="Texture" id=4]
+[ext_resource path="res://Assets/GameLogo.png" type="Texture" id=4]
 [ext_resource path="res://MainMenu.gd" type="Script" id=5]
 [ext_resource path="res://Assets/NewGUI/main menu/mulai_clicked.png" type="Texture" id=6]
 [ext_resource path="res://Assets/NewGUI/main menu/info_clicked.png" type="Texture" id=7]
@@ -24,10 +24,10 @@ __meta__ = {
 [node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -706.0
-margin_top = -656.0
-margin_right = 705.0
-margin_bottom = 655.0
+margin_left = -699.0
+margin_top = -393.0
+margin_right = 699.0
+margin_bottom = 393.0
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
@@ -38,7 +38,7 @@ __meta__ = {
 [node name="Overlay" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.313726 )
+color = Color( 0, 0, 0, 0.196078 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -46,23 +46,23 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/separation = 20
+custom_constants/separation = 35
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Title" type="TextureRect" parent="VBoxContainer"]
-margin_top = 80.0
+margin_top = 97.0
 margin_right = 1280.0
-margin_bottom = 270.0
+margin_bottom = 238.0
 texture = ExtResource( 4 )
 stretch_mode = 4
 
 [node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer"]
-margin_top = 290.0
+margin_top = 273.0
 margin_right = 1280.0
-margin_bottom = 640.0
+margin_bottom = 623.0
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/CenterContainer2"]
 margin_left = 465.0
