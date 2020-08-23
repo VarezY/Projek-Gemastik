@@ -3,5 +3,5 @@
 [ext_resource path="res://Assets/Font/Nunito-ExtraBold.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 34
+size = 43
 font_data = ExtResource( 1 )

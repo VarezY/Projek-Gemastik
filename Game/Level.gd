@@ -5,6 +5,8 @@ export(int) var currentLevel
 export(int) var Points 
 export(String, FILE, "*.tscn") var level
 
+onready var SaveLoad = $"/root/SaveLoad"
+onready var Andy = $Node2D/YSort/Andy
 onready var Circle = $GUI/Circle
 onready var CarAndy = $Node2D/YSort/Andy/AndyPath/AndyCar
 onready var Layout = $GUI/Layout
@@ -13,21 +15,26 @@ onready var StarProggress = $GUI/Layout/NextLevel/TextureProgress
 onready var labelPoints = $GUI/Layout/NextLevel/Label
 onready var starTween = $GUI/Layout/NextLevel/Tween
 
+var config 
+var levelCompleted = []
+var levelObject = []
+var playable
 var totalPoints : float
 var proggress = 0
-var state
-enum STATE {LOCKED, UNLOCKED}
-enum STATELEVEL {FINISH, NOTFINISH}
 var currentPoints = 0
 
 func _ready():
+	playable = true
 	totalPoints = Points
 	get_tree().paused = false
 	Circle.visible = true
 	Layout.visible = false
 	Circle.loadLevel()
 	load_game()
-	print(currentPoints)
+	get_point()
+	save_game()
+	config = SaveLoad.load_setting()
+	Andy.color = config["Car"]["color"]
 	
 func _on_GUI_ButtonPause():
 	get_tree().paused = true
@@ -63,36 +70,51 @@ func _on_Finish_Finish():
 	CarAndy.set_collision_layer_bit(0, false)
 	CarAndy.set_collision_mask_bit(0, false)
 	proggress = round((Points / totalPoints) * 100)
-	#StarProggress.value = proggress
 	$Node2D/YSort/Andy/AndyPath/AndyCar/Pivot/CameraOffset/Camera2D._set_current(false)
 	labelPoints.set_text(str(proggress ," / 100"))
 
 func _on_Finish_TimeOut():
+	if proggress > currentPoints:
+		save_game()
 	showLayout()
 	$GUI/Layout/NextLevel.visible = true
-	#var i = 0
 	starTween.interpolate_property($GUI/Layout/NextLevel/TextureProgress, 'value', 0, proggress, 2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	starTween.start()
 	yield(starTween, "tween_completed")
-	state = STATELEVEL.FINISH
-	if proggress > currentPoints:
-		save_game()
 	
 func showLayout():
 	$GUI/Layout.visible = true
 
+func get_point():
+	for index in range(levelObject.size()):
+		if levelObject[index]["level"] == currentLevel:
+			proggress = levelObject[index]["point"]
+			currentPoints = levelObject[index]["point"]
+
+func convertObject():
+	var level_dict = {
+				"level" : currentLevel,
+				"point" : proggress,
+				"playable" : playable
+			}
+	for index in range(levelObject.size()):
+		if levelObject[index]["level"] == currentLevel:
+			levelObject[index] = level_dict
+			return
+	levelObject.append(level_dict)
+
 func save():
+	convertObject()
 	var save_dict = {
-		"level" : currentLevel,
-		"proggress" : proggress,
-		"status" : state
+		"levels" : levelObject
 	}
 	return save_dict
 
 func save_game():
 	var save_game = File.new()
 	save_game.open("user://savegame.save", File.WRITE)
-	var save_nodes = get_tree().get_nodes_in_group("Persist")
+	#save_game.open_encrypted_with_pass("user://savegame.save", File.WRITE, "OS.get_unique_id()")
+	var save_nodes = get_tree().get_nodes_in_group("Level")
 	for node in save_nodes:
 		#node.queue_free()
 		if node.filename.empty():
@@ -108,9 +130,8 @@ func load_game():
 		print("Save Files do not Exist!")
 		return
 	save_game.open("user://savegame.save", File.READ)
+	#save_game.open_encrypted_with_pass("user://savegame.save", File.WRITE, "OS.get_unique_id()")
 	while save_game.get_position() < save_game.get_len():
 		var node_data = parse_json(save_game.get_line())
-		if node_data["level"] == currentLevel:
-			currentPoints = node_data["proggress"]
-		pass
+		levelObject = node_data["levels"]
 	save_game.close()

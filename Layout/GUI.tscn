@@ -1,18 +1,14 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Assets/Font/Nunito32Bold.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Layout/Kecelakaan.gd" type="Script" id=2]
-[ext_resource path="res://Layout/Layout.gd" type="Script" id=3]
-[ext_resource path="res://Layout/Pause.gd" type="Script" id=4]
-[ext_resource path="res://Layout/NextLevel.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Font/MyriadPro46.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Layout/GUI.gd" type="Script" id=6]
-[ext_resource path="res://Layout/Sign.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Side/IsoSide/ditutup_left.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Font/Nunito34EBold.tres" type="DynamicFont" id=9]
 [ext_resource path="res://Assets/NewGUI/level success/replay_clicked.png" type="Texture" id=10]
 [ext_resource path="res://Assets/NewGUI/level success/next_level_clicked.png" type="Texture" id=11]
 [ext_resource path="res://Assets/NewGUI/level success/panel.png" type="Texture" id=12]
 [ext_resource path="res://Assets/NewGUI/pause/menu_default.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Circle.png" type="Texture" id=14]
 [ext_resource path="res://Assets/NewGUI/rem.png" type="Texture" id=15]
 [ext_resource path="res://Assets/NewGUI/level success/home_clicked.png" type="Texture" id=17]
 [ext_resource path="res://Assets/NewGUI/pause/lanjut_clicked.png" type="Texture" id=18]
@@ -29,13 +25,11 @@
 [ext_resource path="res://Assets/NewGUI/level success/replay_default.png" type="Texture" id=29]
 [ext_resource path="res://Assets/NewGUI/level success/panel_poin.png" type="Texture" id=30]
 [ext_resource path="res://Assets/NewGUI/level success/3Stars.png" type="Texture" id=31]
-[ext_resource path="res://Assets/IDKArtboard 7@3x.png" type="Texture" id=32]
 [ext_resource path="res://Layout/Circle.gd" type="Script" id=33]
 [ext_resource path="res://Assets/NewGUI/pause/lanjut_default.png" type="Texture" id=34]
 [ext_resource path="res://Assets/NewGUI/pause/ulang_clicked.png" type="Texture" id=35]
 
-[sub_resource type="Animation" id=1]
-resource_name = "Down"
+[sub_resource type="Animation" id=2]
 length = 0.8
 tracks/0/type = "bezier"
 tracks/0/path = NodePath(".:rect_position:x")
@@ -58,8 +52,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.8 )
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Up"
+[sub_resource type="Animation" id=3]
 length = 0.8
 tracks/0/type = "bezier"
 tracks/0/path = NodePath(".:rect_position:x")
@@ -82,7 +75,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.8 )
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 length = 0.8
 tracks/0/type = "bezier"
 tracks/0/path = NodePath(".:rect_scale:x")
@@ -105,7 +98,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.8 )
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath(".:rect_scale:x")
 tracks/0/interp = 1
@@ -131,10 +124,14 @@ tracks/1/keys = {
 script = ExtResource( 6 )
 
 [node name="CarButton" type="TextureButton" parent="."]
-margin_left = 1100.0
-margin_top = 550.0
-margin_right = 1213.0
-margin_bottom = 663.0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -198.72
+margin_top = -186.02
+margin_right = -85.7197
+margin_bottom = -73.0204
 toggle_mode = true
 texture_normal = ExtResource( 15 )
 texture_pressed = ExtResource( 20 )
@@ -145,10 +142,12 @@ __meta__ = {
 }
 
 [node name="PauseButton" type="TextureButton" parent="."]
-margin_left = 1170.01
-margin_top = 36.9763
-margin_right = 1236.01
-margin_bottom = 104.976
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -129.0
+margin_top = 54.0
+margin_right = -63.0
+margin_bottom = 122.0
 texture_normal = ExtResource( 26 )
 texture_pressed = ExtResource( 22 )
 expand = true
@@ -161,8 +160,8 @@ __meta__ = {
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 3 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -170,7 +169,6 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -188,10 +186,10 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Layout/Pause/CenterContainer"]
-margin_left = 479.0
-margin_top = 320.0
-margin_right = 800.0
-margin_bottom = 400.0
+margin_left = 522.0
+margin_top = 344.0
+margin_right = 843.0
+margin_bottom = 424.0
 custom_constants/separation = 42
 alignment = 1
 
@@ -219,7 +217,6 @@ texture_pressed = ExtResource( 18 )
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -240,10 +237,10 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Layout/Kecelakaan/CenterContainer"]
-margin_left = 400.0
-margin_top = 281.0
-margin_right = 880.0
-margin_bottom = 438.0
+margin_left = 443.0
+margin_top = 305.0
+margin_right = 923.0
+margin_bottom = 462.0
 custom_constants/separation = 48
 
 [node name="Label" type="Label" parent="Layout/Kecelakaan/CenterContainer/VBoxContainer"]
@@ -268,7 +265,6 @@ texture_pressed = ExtResource( 35 )
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -391,9 +387,9 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 730.0
 margin_right = -0.00012207
-margin_bottom = 6.10352e-05
-script = ExtResource( 7 )
+margin_bottom = 730.0
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -422,20 +418,20 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="Layout/Sign/HBoxContainer"]
-margin_right = 487.0
-margin_bottom = 420.0
+margin_right = 530.0
+margin_bottom = 468.0
 size_flags_horizontal = 3
 texture = ExtResource( 8 )
 expand = true
 stretch_mode = 6
 
 [node name="Label" type="Label" parent="Layout/Sign/HBoxContainer"]
-margin_left = 491.0
-margin_top = 86.0
-margin_right = 979.0
-margin_bottom = 333.0
+margin_left = 534.0
+margin_top = 110.0
+margin_right = 1065.0
+margin_bottom = 357.0
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 9 )
+custom_fonts/font = ExtResource( 5 )
 text = "Ini adalah rambu untuk tidak berhenti di jalan atau di pinggir jalan sampai rambu berikutnya.
 "
 align = 1
@@ -446,14 +442,16 @@ margin_left = 1162.0
 margin_top = 33.0
 margin_right = 1231.0
 margin_bottom = 103.0
+texture_normal = ExtResource( 34 )
+texture_pressed = ExtResource( 18 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Layout/Sign"]
-anims/Down = SubResource( 1 )
-anims/Up = SubResource( 2 )
+anims/Down = SubResource( 2 )
+anims/Up = SubResource( 3 )
 
 [node name="Circle" type="TextureRect" parent="."]
 visible = false
@@ -467,7 +465,7 @@ margin_right = 105.5
 margin_bottom = 106.5
 rect_scale = Vector2( 7.5, 7.5 )
 rect_pivot_offset = Vector2( 105, 105 )
-texture = ExtResource( 32 )
+texture = ExtResource( 14 )
 expand = true
 stretch_mode = 1
 script = ExtResource( 33 )
@@ -476,8 +474,8 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Circle"]
-anims/load_Level = SubResource( 3 )
-anims/next_Level = SubResource( 4 )
+anims/load_Level = SubResource( 4 )
+anims/next_Level = SubResource( 5 )
 [connection signal="toggled" from="CarButton" to="." method="_on_CarButton_toggled"]
 [connection signal="pressed" from="PauseButton" to="." method="_on_PauseButton_pressed"]
 [connection signal="pressed" from="Layout/Pause/CenterContainer/HBoxContainer/HomeButton" to="." method="_on_HomeButton_pressed"]

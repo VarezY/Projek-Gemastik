@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/NewGUI/main menu/bg.png" type="Texture" id=1]
 [ext_resource path="res://Assets/NewGUI/main menu/panel.png" type="Texture" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Assets/NewGUI/level/5_clicked.png" type="Texture" id=8]
 [ext_resource path="res://Assets/NewGUI/level/4_clicked.png" type="Texture" id=9]
 [ext_resource path="res://Assets/NewGUI/level/4_default.png" type="Texture" id=10]
+[ext_resource path="res://Assets/NewGUI/Button/btn_close.png" type="Texture" id=11]
+[ext_resource path="res://Layout/Buttons/Back.gd" type="Script" id=12]
 
 [node name="LevelSelect" type="Control"]
 anchor_right = 1.0
@@ -51,20 +53,20 @@ __meta__ = {
 }
 
 [node name="Panel" type="TextureRect" parent="CenterPanel"]
-margin_left = 190.0
-margin_top = 85.0
-margin_right = 1090.0
-margin_bottom = 635.0
+margin_left = 233.0
+margin_top = 109.0
+margin_right = 1133.0
+margin_bottom = 659.0
 rect_min_size = Vector2( 900, 550 )
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 1
 
 [node name="Buttons" type="VBoxContainer" parent="CenterPanel"]
-margin_left = 290.0
-margin_top = 144.0
-margin_right = 990.0
-margin_bottom = 575.0
+margin_left = 333.0
+margin_top = 168.0
+margin_right = 1033.0
+margin_bottom = 599.0
 rect_min_size = Vector2( 700, 60 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -96,6 +98,7 @@ levelTujuan = "res://Game/Level 2.tscn"
 "Buttons",
 ] instance=ExtResource( 6 )]
 disabled = true
+levelTujuan = "res://Game/Level 3.tscn"
 
 [node name="Level 04" parent="CenterPanel/Buttons/Row1" groups=[
 "Buttons",
@@ -234,3 +237,24 @@ disabled = true
 margin_left = 619.0
 margin_right = 684.0
 disabled = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 1074.0
+margin_top = 137.0
+margin_right = 1095.0
+margin_bottom = 158.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="TextureButton" parent="MarginContainer" groups=[
+"Buttons",
+]]
+margin_right = 21.0
+margin_bottom = 21.0
+texture_normal = ExtResource( 11 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 12 )
+levelTujuan = "res://MainMenu.tscn"

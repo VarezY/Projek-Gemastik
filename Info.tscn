@@ -1,8 +1,244 @@
-[gd_scene format=2]
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Assets/NewGUI/main menu/bg.png" type="Texture" id=1]
+[ext_resource path="res://Assets/NewGUI/info_lalin/judul.png" type="Texture" id=2]
+[ext_resource path="res://Assets/NewGUI/info_lalin/panel.png" type="Texture" id=3]
+[ext_resource path="res://Assets/NewGUI/Button/btn_back_clicked.png" type="Texture" id=4]
+[ext_resource path="res://Assets/NewGUI/Button/btn_close.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Side/IsoSide/1c.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Font/MyriadPro24.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Assets/NewGUI/Button/btn_next.png" type="Texture" id=8]
+[ext_resource path="res://Assets/NewGUI/Button/btn_back.png" type="Texture" id=9]
+[ext_resource path="res://Assets/NewGUI/Button/btn_next_clicked.png" type="Texture" id=10]
+[ext_resource path="res://Assets/NewGUI/level success/panel_poin.png" type="Texture" id=11]
+[ext_resource path="res://Info.gd" type="Script" id=12]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Right"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Left2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Right:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [node name="Info" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -699.0
+margin_top = -393.0
+margin_right = 699.0
+margin_bottom = 393.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.196078 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 289.0
+margin_top = 114.878
+margin_right = -289.0
+margin_bottom = -116.122
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = 21.3409
+margin_right = -30.0
+margin_bottom = -28.6591
+custom_constants/separation = 45
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/VBoxContainer"]
+margin_right = 728.0
+margin_bottom = 34.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
+margin_top = 79.0
+margin_right = 728.0
+margin_bottom = 279.0
+custom_constants/separation = 55
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/VBoxContainer/HBoxContainer"]
+margin_left = 118.0
+margin_right = 153.0
+margin_bottom = 200.0
+
+[node name="LeftButton" type="TextureButton" parent="NinePatchRect/VBoxContainer/HBoxContainer/CenterContainer"]
+margin_top = 82.0
+margin_right = 35.0
+margin_bottom = 117.0
+rect_min_size = Vector2( 35, 35 )
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+
+[node name="Left2" type="TextureRect" parent="NinePatchRect/VBoxContainer/HBoxContainer"]
+visible = false
+modulate = Color( 1, 1, 1, 0.313726 )
+margin_left = 208.0
+margin_right = 248.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 40, 30 )
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+
+[node name="Left" type="TextureRect" parent="NinePatchRect/VBoxContainer/HBoxContainer"]
+modulate = Color( 1, 1, 1, 0.313726 )
+margin_left = 208.0
+margin_right = 248.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 40, 30 )
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+
+[node name="Main" type="TextureRect" parent="NinePatchRect/VBoxContainer/HBoxContainer"]
+margin_left = 303.0
+margin_right = 424.111
+margin_bottom = 200.0
+rect_min_size = Vector2( 121.111, 200 )
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+
+[node name="Right" type="TextureRect" parent="NinePatchRect/VBoxContainer/HBoxContainer"]
+modulate = Color( 1, 1, 1, 0.313726 )
+margin_left = 479.0
+margin_right = 519.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 40, 200 )
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+
+[node name="Right2" type="TextureRect" parent="NinePatchRect/VBoxContainer/HBoxContainer"]
+visible = false
+modulate = Color( 1, 1, 1, 0.313726 )
+margin_left = 527.0
+margin_right = 567.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 40, 200 )
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+
+[node name="CenterContainer2" type="CenterContainer" parent="NinePatchRect/VBoxContainer/HBoxContainer"]
+margin_left = 574.0
+margin_right = 609.0
+margin_bottom = 200.0
+
+[node name="RightButton" type="TextureButton" parent="NinePatchRect/VBoxContainer/HBoxContainer/CenterContainer2"]
+margin_top = 82.0
+margin_right = 35.0
+margin_bottom = 117.0
+rect_min_size = Vector2( 35, 35 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 10 )
+expand = true
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NinePatchRect/VBoxContainer/HBoxContainer"]
+anims/Right = SubResource( 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/VBoxContainer"]
+margin_top = 324.0
+margin_right = 728.0
+margin_bottom = 487.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/VBoxContainer/CenterContainer"]
+margin_left = 139.0
+margin_top = 6.0
+margin_right = 589.0
+margin_bottom = 156.0
+rect_min_size = Vector2( 450, 150 )
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 6
+
+[node name="Info" type="Label" parent="NinePatchRect/VBoxContainer/CenterContainer/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -3.05176e-05
+margin_bottom = -32.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 7 )
+text = "sdasdasdwasdwasdwasdwasdwasdwasdwaqweqweqweqweqweqweqweqweqweqeqweqeqw"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -67.9999
+margin_top = 18.0
+margin_right = -6.99994
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Kembali" type="TextureButton" parent="NinePatchRect/MarginContainer"]
+margin_right = 60.0
+margin_bottom = 22.0
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/HBoxContainer/CenterContainer/LeftButton" to="." method="_on_LeftButton_pressed"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/HBoxContainer/CenterContainer2/RightButton" to="." method="_on_RightButton_pressed"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer/Kembali" to="." method="_on_Kembali_pressed"]

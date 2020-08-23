@@ -1,0 +1,106 @@
+[gd_resource type="SpriteFrames" load_steps=17 format=2]
+
+[ext_resource path="res://Assets/Car/blue_back.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Car/blue_back2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Car/blue_front2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Car/blue_front.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Car/red_back2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Car/green_back2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Car/red_front2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Car/green_front2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Car/red_front.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Car/white_back2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Car/white_front.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Car/white_front2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Car/white_back.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Car/green_front.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Car/green_back.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Car/red_back.png" type="Texture" id=16]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "BlueSE",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "BlueNE",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "WhiteSW",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "GreenSW",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "BlueNW",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "RedSE",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "WhiteNW",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "GreenNE",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "GreenNW",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "WhiteSE",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "BlueSW",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "RedSW",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "RedNE",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "RedNW",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "GreenSE",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "WhiteNE",
+"speed": 5.0
+} ]

@@ -5,7 +5,6 @@ export(int) var MaksimalKecepatan = 150
 
 onready var car = $CarPath/Car
 onready var caranime = $CarPath/Car/AnimatedSprite
-onready var carpath = $CarPath
 onready var carRay = $CarPath/Car/RayCast2D
 
 var curves
@@ -38,9 +37,8 @@ func _process(delta):
 			set_process(false)
 	else:
 		start = 0
-		velocity.x = lerp(velocity.x, 0, 0.4)
-		velocity.y = lerp(velocity.y, 0, 0.4)
-		pass
+		velocity.x = lerp(velocity.x, 0, 0.2)
+		velocity.y = lerp(velocity.y, 0, 0.2)
 	caranime.play(direction)
 	car.move_and_slide(velocity)
 	

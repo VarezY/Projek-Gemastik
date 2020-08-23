@@ -10,9 +10,3 @@ func _ready():
 	proggressBar.value = proggressLevel
 	pass
 
-func save():
-	var save_dict = {
-		"filename" : get_filename()
-		
-	}
-	pass

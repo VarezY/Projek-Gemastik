@@ -53,20 +53,20 @@ __meta__ = {
 }
 
 [node name="Title" type="TextureRect" parent="VBoxContainer"]
-margin_top = 97.0
-margin_right = 1280.0
-margin_bottom = 238.0
+margin_top = 121.0
+margin_right = 1366.0
+margin_bottom = 262.0
 texture = ExtResource( 4 )
 stretch_mode = 4
 
 [node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer"]
-margin_top = 273.0
-margin_right = 1280.0
-margin_bottom = 623.0
+margin_top = 297.0
+margin_right = 1366.0
+margin_bottom = 647.0
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/CenterContainer2"]
-margin_left = 465.0
-margin_right = 815.0
+margin_left = 508.0
+margin_right = 858.0
 margin_bottom = 350.0
 size_flags_horizontal = 2
 __meta__ = {
@@ -129,7 +129,7 @@ expand = true
 stretch_mode = 5
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 640, 360 )
+position = Vector2( 683, 384 )
 [connection signal="pressed" from="VBoxContainer/CenterContainer2/CenterContainer/Buttons/ButtonMulai" to="." method="_on_ButtonMulai_pressed"]
 [connection signal="pressed" from="VBoxContainer/CenterContainer2/CenterContainer/Buttons/ButtonInfo" to="." method="_on_ButtonInfo_pressed"]
 [connection signal="pressed" from="VBoxContainer/CenterContainer2/CenterContainer/Buttons/ButtonSetting" to="." method="_on_ButtonSetting_pressed"]

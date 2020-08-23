@@ -1,5 +1,11 @@
 extends Level
 
+
+
+
+func _ready():
+	pass
+
 func _on_GUI_ButtonCarGo():
 	print("Car Go")
 

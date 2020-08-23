@@ -9,6 +9,7 @@ onready var CameraAndy = $AndyPath/AndyCar/Pivot
 signal Tabrakan
 
 var curves
+var color
 var points
 var tujuan_Mobil
 var direction
@@ -31,7 +32,8 @@ func _process(delta):
 			start += ACC
 			Moving(point_position)
 			AnimeCar()
-		CarAnime.play(direction)
+		#color = "Blue"
+		CarAnime.play(color+direction)
 	else:
 		velocity.x = lerp(velocity.x, 0, 0.05)
 		velocity.y = lerp(velocity.y, 0, 0.05)

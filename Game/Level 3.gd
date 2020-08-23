@@ -8,8 +8,8 @@ extends Level
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Node2D/YSort/Andy/AndyPath/AndyCar.set_collision_layer_bit(0, false)
-	$Node2D/YSort/Andy/AndyPath/AndyCar.set_collision_mask_bit(0, false)
+	#$Node2D/YSort/Andy/AndyPath/AndyCar.set_collision_layer_bit(0, false)
+	#$Node2D/YSort/Andy/AndyPath/AndyCar.set_collision_mask_bit(0, false)
 	
 	pass
 
@@ -30,8 +30,6 @@ func _on_GUI_ButtonCarStop():
 
 func _on_GUI_CircleLoad():
 	print("Anime LoadLevel Selesai")
-
-
 
 func _on_Andy_Tabrakan():
 	print("Tabrakan")

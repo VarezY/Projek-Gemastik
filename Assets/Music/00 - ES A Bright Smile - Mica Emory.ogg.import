@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/00 - ES A Bright Smile - Mica Emory.ogg-7ce3e1ba572b400507c743fe11a4ba30.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/00 - ES A Bright Smile - Mica Emory.ogg"
+dest_files=[ "res://.import/00 - ES A Bright Smile - Mica Emory.ogg-7ce3e1ba572b400507c743fe11a4ba30.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=2.0

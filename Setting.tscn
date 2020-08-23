@@ -1,8 +1,301 @@
-[gd_scene format=2]
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://Assets/NewGUI/main menu/bg.png" type="Texture" id=1]
+[ext_resource path="res://Assets/NewGUI/pengaturan/panel.png" type="Texture" id=2]
+[ext_resource path="res://Assets/NewGUI/Button/btn_back_clicked.png" type="Texture" id=3]
+[ext_resource path="res://Assets/NewGUI/Button/btn_next.png" type="Texture" id=4]
+[ext_resource path="res://Assets/NewGUI/pengaturan/bgm.png" type="Texture" id=5]
+[ext_resource path="res://Assets/NewGUI/pengaturan/ic_bgm.png" type="Texture" id=6]
+[ext_resource path="res://Assets/NewGUI/pengaturan/ic_sfx.png" type="Texture" id=7]
+[ext_resource path="res://Assets/NewGUI/pengaturan/ubah_mobil.png" type="Texture" id=8]
+[ext_resource path="res://Assets/NewGUI/pengaturan/pengaturan.png" type="Texture" id=9]
+[ext_resource path="res://Assets/NewGUI/pengaturan/volume.png" type="Texture" id=10]
+[ext_resource path="res://Assets/NewGUI/pengaturan/btnOk_clicked.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Car/blue_front.png" type="Texture" id=12]
+[ext_resource path="res://Assets/NewGUI/pengaturan/btnVolume_clicked.png" type="Texture" id=13]
+[ext_resource path="res://Assets/NewGUI/pengaturan/volume_full.png" type="Texture" id=14]
+[ext_resource path="res://Assets/NewGUI/Button/btn_back.png" type="Texture" id=15]
+[ext_resource path="res://Assets/NewGUI/pengaturan/sfx.png" type="Texture" id=16]
+[ext_resource path="res://Assets/NewGUI/pengaturan/credit_clicked.png" type="Texture" id=17]
+[ext_resource path="res://Assets/NewGUI/pengaturan/btnVolume_default.png" type="Texture" id=18]
+[ext_resource path="res://Assets/NewGUI/pengaturan/btnOk.png" type="Texture" id=19]
+[ext_resource path="res://Assets/NewGUI/pengaturan/credit_default.png" type="Texture" id=20]
+[ext_resource path="res://Assets/NewGUI/Button/btn_next_clicked.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Font/MyriadPro24.tres" type="DynamicFont" id=22]
+[ext_resource path="res://Setting.gd" type="Script" id=23]
+[ext_resource path="res://Assets/NewGUI/Button/btn_close.png" type="Texture" id=24]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 298, 12 )
+axis_stretch_horizontal = 1
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 298, 12 )
+axis_stretch_horizontal = 1
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 298, 12 )
+axis_stretch_horizontal = 1
 
 [node name="Setting" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 23 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -699.0
+margin_top = -393.0
+margin_right = 699.0
+margin_bottom = 393.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Overlay" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.196078 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 387.0
+margin_top = 152.0
+margin_right = -388.0
+margin_bottom = -152.0
+texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 35.0
+margin_top = 30.0
+margin_right = -35.0
+margin_bottom = -30.0
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/VBoxContainer"]
+margin_right = 521.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+texture = ExtResource( 9 )
+stretch_mode = 4
+
+[node name="BGMContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
+margin_top = 48.0
+margin_right = 521.0
+margin_bottom = 82.0
+custom_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/VBoxContainer/BGMContainer"]
+margin_right = 34.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 34, 0 )
+texture = ExtResource( 6 )
+
+[node name="TextureRect2" type="TextureRect" parent="NinePatchRect/VBoxContainer/BGMContainer"]
+margin_left = 44.0
+margin_right = 164.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 120, 0 )
+texture = ExtResource( 5 )
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/VBoxContainer/BGMContainer"]
+margin_left = 174.0
+margin_right = 472.0
+margin_bottom = 34.0
+
+[node name="BGMSlider" type="HSlider" parent="NinePatchRect/VBoxContainer/BGMContainer/CenterContainer" groups=[
+"Slider",
+]]
+margin_top = 7.0
+margin_right = 298.0
+margin_bottom = 26.0
+custom_icons/grabber_highlight = ExtResource( 13 )
+custom_icons/grabber = ExtResource( 18 )
+custom_styles/slider = SubResource( 1 )
+custom_styles/grabber_area_highlight = SubResource( 2 )
+custom_styles/grabber_area = SubResource( 3 )
+value = 100.0
+rounded = true
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/BGMContainer" groups=[
+"Label",
+]]
+margin_left = 482.0
+margin_top = 5.0
+margin_right = 518.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 22 )
+text = "100"
+
+[node name="SFXContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
+margin_top = 97.0
+margin_right = 521.0
+margin_bottom = 131.0
+custom_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/VBoxContainer/SFXContainer"]
+margin_right = 34.0
+margin_bottom = 34.0
+texture = ExtResource( 7 )
+
+[node name="TextureRect2" type="TextureRect" parent="NinePatchRect/VBoxContainer/SFXContainer"]
+margin_left = 44.0
+margin_right = 164.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 120, 0 )
+texture = ExtResource( 16 )
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/VBoxContainer/SFXContainer"]
+margin_left = 174.0
+margin_right = 472.0
+margin_bottom = 34.0
+
+[node name="SFXSlider" type="HSlider" parent="NinePatchRect/VBoxContainer/SFXContainer/CenterContainer" groups=[
+"Slider",
+]]
+margin_top = 7.0
+margin_right = 298.0
+margin_bottom = 26.0
+custom_icons/grabber_highlight = ExtResource( 13 )
+custom_icons/grabber = ExtResource( 18 )
+custom_styles/slider = SubResource( 1 )
+custom_styles/grabber_area_highlight = SubResource( 2 )
+custom_styles/grabber_area = SubResource( 3 )
+value = 100.0
+rounded = true
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/SFXContainer" groups=[
+"Label",
+]]
+margin_left = 482.0
+margin_top = 5.0
+margin_right = 518.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 22 )
+text = "100"
+
+[node name="UbahMobil" type="TextureRect" parent="NinePatchRect/VBoxContainer"]
+margin_top = 146.0
+margin_right = 521.0
+margin_bottom = 179.0
+texture = ExtResource( 8 )
+stretch_mode = 4
+
+[node name="CarContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
+margin_top = 194.0
+margin_right = 521.0
+margin_bottom = 344.0
+alignment = 1
+
+[node name="PreviousContainer" type="CenterContainer" parent="NinePatchRect/VBoxContainer/CarContainer"]
+margin_right = 166.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+
+[node name="Previous" type="TextureButton" parent="NinePatchRect/VBoxContainer/CarContainer/PreviousContainer"]
+margin_left = 65.0
+margin_top = 57.0
+margin_right = 100.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 35, 35 )
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 3 )
+expand = true
+stretch_mode = 5
+
+[node name="Car" type="TextureRect" parent="NinePatchRect/VBoxContainer/CarContainer"]
+margin_left = 170.0
+margin_right = 350.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 180, 150 )
+texture = ExtResource( 12 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextContainer" type="CenterContainer" parent="NinePatchRect/VBoxContainer/CarContainer"]
+margin_left = 354.0
+margin_right = 521.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+
+[node name="Next" type="TextureButton" parent="NinePatchRect/VBoxContainer/CarContainer/NextContainer"]
+margin_left = 66.0
+margin_top = 57.0
+margin_right = 101.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 35, 35 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 21 )
+expand = true
+stretch_mode = 5
+
+[node name="LastContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
+margin_top = 359.0
+margin_right = 521.0
+margin_bottom = 383.0
+
+[node name="Credit" type="TextureButton" parent="NinePatchRect/VBoxContainer/LastContainer"]
+margin_right = 92.0
+margin_bottom = 24.0
+texture_normal = ExtResource( 20 )
+texture_pressed = ExtResource( 17 )
+
+[node name="Ok" type="TextureButton" parent="NinePatchRect/VBoxContainer/LastContainer"]
+margin_left = 482.0
+margin_right = 521.0
+margin_bottom = 24.0
+size_flags_horizontal = 10
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 11 )
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -67.0
+margin_top = 18.0
+margin_right = -6.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="NinePatchRect/MarginContainer"]
+margin_right = 61.0
+margin_bottom = 22.0
+texture_normal = ExtResource( 24 )
+expand = true
+stretch_mode = 5
+[connection signal="value_changed" from="NinePatchRect/VBoxContainer/BGMContainer/CenterContainer/BGMSlider" to="." method="_on_BGMSlider_value_changed"]
+[connection signal="value_changed" from="NinePatchRect/VBoxContainer/SFXContainer/CenterContainer/SFXSlider" to="." method="_on_SFXSlider_value_changed"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/CarContainer/PreviousContainer/Previous" to="." method="_on_Previous_pressed"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/CarContainer/NextContainer/Next" to="." method="_on_Next_pressed"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/LastContainer/Ok" to="." method="_on_Ok_pressed"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
