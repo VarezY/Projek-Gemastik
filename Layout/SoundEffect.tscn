@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/SoundEffect/Click_1.wav" type="AudioStream" id=1]
+[ext_resource path="res://Assets/SoundEffect/Click_0.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/SoundEffect/Car_crusing.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/SoundEffect/Car_start.wav" type="AudioStream" id=4]
+[ext_resource path="res://Layout/SoundEffect.gd" type="Script" id=5]
+[ext_resource path="res://Assets/SoundEffect/Car_stop.wav" type="AudioStream" id=6]
+
+[node name="SoundEffect" type="Node"]
+script = ExtResource( 5 )
+
+[node name="CarStart" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -6.0
+
+[node name="CarCrusing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -6.0
+
+[node name="ClickUp" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 1 )
+
+[node name="ClickDown" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 2 )
+
+[node name="CarStop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -6.0
+[connection signal="finished" from="CarStart" to="." method="_on_CarStart_finished"]

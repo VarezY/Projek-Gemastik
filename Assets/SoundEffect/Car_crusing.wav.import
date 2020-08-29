@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Car_crusing.wav-0cc3a0f775a96e9033e6cb337e584628.sample"
+
+[deps]
+
+source_file="res://Assets/SoundEffect/Car_crusing.wav"
+dest_files=[ "res://.import/Car_crusing.wav-0cc3a0f775a96e9033e6cb337e584628.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

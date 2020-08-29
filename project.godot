@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Path2D",
+"class": "Ambulance",
+"language": "GDScript",
+"path": "res://Game/Vehicles/Ambulance.gd"
+}, {
+"base": "Path2D",
 "class": "Car",
 "language": "GDScript",
 "path": "res://Game/Vehicles/Car.gd"
@@ -50,6 +55,7 @@ _global_script_classes=[ {
 "path": "res://Vehicles/TrainPaths.gd"
 } ]
 _global_script_class_icons={
+"Ambulance": "",
 "Car": "",
 "Danger": "",
 "Kereta": "",
@@ -73,6 +79,8 @@ config/icon="res://Assets/GameIcon.png"
 BackgroundMusic="*res://Layout/Background Music.tscn"
 SaveLoad="*res://Game/LoadSave/SaveLoad.gd"
 Rambu="*res://Layout/Rambu.gd"
+SfxButton="*res://Layout/Buttons/SFXButton.gd"
+SoundEffect="*res://Layout/SoundEffect.tscn"
 
 [debug]
 
@@ -84,6 +92,15 @@ window/size/width=1366
 window/size/height=768
 window/size/fullscreen=true
 window/stretch/mode="2d"
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Cars"
+2d_physics/layer_4="Stop"
+2d_physics/layer_5="Trigger"
+2d_physics/layer_6="Danger"
+2d_physics/layer_7="Finish"
 
 [rendering]
 

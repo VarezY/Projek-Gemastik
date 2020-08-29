@@ -1,6 +1,7 @@
 extends Path2D
 
-export(int) var MaksimalKecepatan = 150
+export(int) var MaksimalKecepatan = 200
+
 
 onready var AndyCar = $AndyPath/AndyCar
 onready var CarAnime = $AndyPath/AndyCar/AnimatedSprite
@@ -21,7 +22,6 @@ var i = 0
 var rem : bool = false
 
 func _ready():
-	
 	curves = get_curve()
 	points = curves.get_point_count()
 
@@ -40,7 +40,7 @@ func _process(delta):
 	AndyCar.move_and_slide(velocity)
 	for slide in AndyCar.get_slide_count():
 			var collision = AndyCar.get_slide_collision(slide)
-			if collision.collider.name == "Car":
+			if collision.collider.name in ["Car", "Police", "Ambulance"]:
 				print("Tabrakan")
 				emit_signal("Tabrakan")
 			#print("I collided with ", collision.collider.name)

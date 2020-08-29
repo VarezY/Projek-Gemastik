@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Credit.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Side/IsoSign/1c_left.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Side/IsoSign/1b_left.png" type="Texture" id=3]
+[ext_resource path="res://Assets/NewGUI/main menu/bg.png" type="Texture" id=2]
+[ext_resource path="res://Assets/NewGUI/main menu/panel.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Font/MyriadPro46.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/Font/MyriadPro24.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Assets/NewGUI/Button/btn_close.png" type="Texture" id=6]
 
 [node name="Credit" type="Control"]
 anchor_right = 1.0
@@ -14,16 +17,150 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton" type="TextureButton" parent="."]
-margin_left = 235.201
-margin_top = 69.9246
-margin_right = 282.201
-margin_bottom = 225.925
-texture_normal = ExtResource( 3 )
-
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 573.17
-margin_top = 65.6867
-margin_right = 620.17
-margin_bottom = 221.687
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -699.0
+margin_top = -392.0
+margin_right = 699.0
+margin_bottom = 394.0
 texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.196078 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.5874
+margin_bottom = -1.5874
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+margin_left = 332.0
+margin_top = 51.0
+margin_right = 1034.0
+margin_bottom = 716.0
+texture = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 28
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CenterContainer/TextureRect/VBoxContainer"]
+margin_top = 75.0
+margin_right = 702.0
+margin_bottom = 122.0
+size_flags_vertical = 5
+custom_fonts/font = ExtResource( 4 )
+text = "CREDITS"
+align = 1
+
+[node name="Label2" type="Label" parent="CenterContainer/TextureRect/VBoxContainer"]
+margin_top = 150.0
+margin_right = 702.0
+margin_bottom = 174.0
+custom_fonts/font = ExtResource( 5 )
+align = 1
+
+[node name="Label3" type="Label" parent="CenterContainer/TextureRect/VBoxContainer"]
+margin_top = 202.0
+margin_right = 702.0
+margin_bottom = 226.0
+custom_fonts/font = ExtResource( 5 )
+text = "PROGRAMMERS"
+align = 1
+
+[node name="Label4" type="Label" parent="CenterContainer/TextureRect/VBoxContainer"]
+margin_top = 254.0
+margin_right = 702.0
+margin_bottom = 278.0
+custom_fonts/font = ExtResource( 5 )
+text = "ALIFIAN ALVAREZ F.S."
+align = 1
+
+[node name="Label5" type="Label" parent="CenterContainer/TextureRect/VBoxContainer"]
+margin_top = 306.0
+margin_right = 702.0
+margin_bottom = 330.0
+custom_fonts/font = ExtResource( 5 )
+align = 1
+
+[node name="Label6" type="Label" parent="CenterContainer/TextureRect/VBoxContainer"]
+margin_top = 358.0
+margin_right = 702.0
+margin_bottom = 382.0
+custom_fonts/font = ExtResource( 5 )
+text = "ASSETS & DESAIN"
+align = 1
+
+[node name="Label7" type="Label" parent="CenterContainer/TextureRect/VBoxContainer"]
+margin_top = 410.0
+margin_right = 702.0
+margin_bottom = 434.0
+custom_fonts/font = ExtResource( 5 )
+text = "RIZKIKA  SITI SYIFA"
+align = 1
+
+[node name="Label8" type="Label" parent="CenterContainer/TextureRect/VBoxContainer"]
+margin_top = 462.0
+margin_right = 702.0
+margin_bottom = 486.0
+custom_fonts/font = ExtResource( 5 )
+align = 1
+
+[node name="Label9" type="Label" parent="CenterContainer/TextureRect/VBoxContainer"]
+margin_top = 514.0
+margin_right = 702.0
+margin_bottom = 538.0
+custom_fonts/font = ExtResource( 5 )
+text = "MUSIK & SFX"
+align = 1
+
+[node name="Label10" type="Label" parent="CenterContainer/TextureRect/VBoxContainer"]
+margin_top = 566.0
+margin_right = 702.0
+margin_bottom = 590.0
+custom_fonts/font = ExtResource( 5 )
+text = "EPIDEMIC SOUND"
+align = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/TextureRect"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -50.0
+margin_top = 28.0
+margin_right = -29.0
+margin_bottom = 49.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="CenterContainer/TextureRect/MarginContainer" groups=[
+"Buttons",
+]]
+margin_right = 21.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 21, 21 )
+texture_normal = ExtResource( 6 )
+expand = true
+stretch_mode = 5
+[connection signal="pressed" from="CenterContainer/TextureRect/MarginContainer/TextureButton" to="." method="_on_TextureButton_pressed"]

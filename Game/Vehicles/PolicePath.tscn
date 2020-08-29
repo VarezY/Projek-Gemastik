@@ -12,11 +12,6 @@ animations = [ {
 "name": "NW",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "SE",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "NE",
@@ -26,10 +21,15 @@ animations = [ {
 "loop": true,
 "name": "SW",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "SE",
+"speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 40.3887
+radius = 51.0185
 
 [node name="PoliceCar" type="PathFollow2D"]
 position = Vector2( 1957.58, 847.567 )
@@ -37,6 +37,8 @@ rotate = false
 
 [node name="Police" type="KinematicBody2D" parent="."]
 scale = Vector2( 0.4, 0.4 )
+collision_layer = 2
+collision_mask = 2147483767
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Police"]
 scale = Vector2( 0.6, 0.6 )
@@ -49,3 +51,5 @@ shape = SubResource( 2 )
 [node name="RayCast2D" type="RayCast2D" parent="Police"]
 enabled = true
 cast_to = Vector2( 150, 0 )
+collision_mask = 2147483711
+collide_with_areas = true

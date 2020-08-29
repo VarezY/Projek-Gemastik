@@ -89,7 +89,9 @@ margin_bottom = 317.0
 custom_constants/separation = 15
 alignment = 1
 
-[node name="ButtonMulai" type="TextureButton" parent="VBoxContainer/CenterContainer2/CenterContainer/Buttons"]
+[node name="ButtonMulai" type="TextureButton" parent="VBoxContainer/CenterContainer2/CenterContainer/Buttons" groups=[
+"Buttons",
+]]
 margin_right = 250.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 250, 60 )
@@ -98,7 +100,9 @@ texture_pressed = ExtResource( 6 )
 expand = true
 stretch_mode = 5
 
-[node name="ButtonInfo" type="TextureButton" parent="VBoxContainer/CenterContainer2/CenterContainer/Buttons"]
+[node name="ButtonInfo" type="TextureButton" parent="VBoxContainer/CenterContainer2/CenterContainer/Buttons" groups=[
+"Buttons",
+]]
 margin_top = 75.0
 margin_right = 250.0
 margin_bottom = 135.0
@@ -108,7 +112,9 @@ texture_pressed = ExtResource( 7 )
 expand = true
 stretch_mode = 5
 
-[node name="ButtonSetting" type="TextureButton" parent="VBoxContainer/CenterContainer2/CenterContainer/Buttons"]
+[node name="ButtonSetting" type="TextureButton" parent="VBoxContainer/CenterContainer2/CenterContainer/Buttons" groups=[
+"Buttons",
+]]
 margin_top = 150.0
 margin_right = 250.0
 margin_bottom = 210.0
@@ -118,7 +124,9 @@ texture_pressed = ExtResource( 11 )
 expand = true
 stretch_mode = 5
 
-[node name="ButtonKeluar" type="TextureButton" parent="VBoxContainer/CenterContainer2/CenterContainer/Buttons"]
+[node name="ButtonKeluar" type="TextureButton" parent="VBoxContainer/CenterContainer2/CenterContainer/Buttons" groups=[
+"Buttons",
+]]
 margin_top = 225.0
 margin_right = 250.0
 margin_bottom = 285.0

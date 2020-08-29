@@ -217,7 +217,9 @@ margin_right = 166.0
 margin_bottom = 150.0
 size_flags_horizontal = 3
 
-[node name="Previous" type="TextureButton" parent="NinePatchRect/VBoxContainer/CarContainer/PreviousContainer"]
+[node name="Previous" type="TextureButton" parent="NinePatchRect/VBoxContainer/CarContainer/PreviousContainer" groups=[
+"Buttons",
+]]
 margin_left = 65.0
 margin_top = 57.0
 margin_right = 100.0
@@ -246,7 +248,9 @@ margin_right = 521.0
 margin_bottom = 150.0
 size_flags_horizontal = 3
 
-[node name="Next" type="TextureButton" parent="NinePatchRect/VBoxContainer/CarContainer/NextContainer"]
+[node name="Next" type="TextureButton" parent="NinePatchRect/VBoxContainer/CarContainer/NextContainer" groups=[
+"Buttons",
+]]
 margin_left = 66.0
 margin_top = 57.0
 margin_right = 101.0
@@ -262,13 +266,17 @@ margin_top = 359.0
 margin_right = 521.0
 margin_bottom = 383.0
 
-[node name="Credit" type="TextureButton" parent="NinePatchRect/VBoxContainer/LastContainer"]
+[node name="Credit" type="TextureButton" parent="NinePatchRect/VBoxContainer/LastContainer" groups=[
+"Buttons",
+]]
 margin_right = 92.0
 margin_bottom = 24.0
 texture_normal = ExtResource( 20 )
 texture_pressed = ExtResource( 17 )
 
-[node name="Ok" type="TextureButton" parent="NinePatchRect/VBoxContainer/LastContainer"]
+[node name="Ok" type="TextureButton" parent="NinePatchRect/VBoxContainer/LastContainer" groups=[
+"Buttons",
+]]
 margin_left = 482.0
 margin_right = 521.0
 margin_bottom = 24.0
@@ -287,7 +295,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton" type="TextureButton" parent="NinePatchRect/MarginContainer"]
+[node name="TextureButton" type="TextureButton" parent="NinePatchRect/MarginContainer" groups=[
+"Buttons",
+]]
 margin_right = 61.0
 margin_bottom = 22.0
 texture_normal = ExtResource( 24 )
@@ -297,5 +307,6 @@ stretch_mode = 5
 [connection signal="value_changed" from="NinePatchRect/VBoxContainer/SFXContainer/CenterContainer/SFXSlider" to="." method="_on_SFXSlider_value_changed"]
 [connection signal="pressed" from="NinePatchRect/VBoxContainer/CarContainer/PreviousContainer/Previous" to="." method="_on_Previous_pressed"]
 [connection signal="pressed" from="NinePatchRect/VBoxContainer/CarContainer/NextContainer/Next" to="." method="_on_Next_pressed"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/LastContainer/Credit" to="." method="_on_Credit_pressed"]
 [connection signal="pressed" from="NinePatchRect/VBoxContainer/LastContainer/Ok" to="." method="_on_Ok_pressed"]
 [connection signal="pressed" from="NinePatchRect/MarginContainer/TextureButton" to="." method="_on_TextureButton_pressed"]

@@ -1,6 +1,7 @@
 extends Control
 
 onready var dict = $"/root/Rambu".rambu_dict
+onready var SFXButtons = $"/root/SfxButton"
 onready var left = $NinePatchRect/VBoxContainer/HBoxContainer/Left
 onready var middle = $NinePatchRect/VBoxContainer/HBoxContainer/Main
 onready var right = $NinePatchRect/VBoxContainer/HBoxContainer/Right
@@ -10,6 +11,7 @@ var pointer = 3
 var size
 
 func _ready():
+	SFXButtons.CallGroup()
 	size = dict.size() - 1
 	rambuChange()
 

@@ -30,6 +30,3 @@ func _on_GUI_ButtonCarStop():
 
 func _on_GUI_CircleLoad():
 	print("Anime LoadLevel Selesai")
-
-func _on_Andy_Tabrakan():
-	print("Tabrakan")

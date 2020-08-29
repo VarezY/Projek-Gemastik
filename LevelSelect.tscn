@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Assets/NewGUI/main menu/bg.png" type="Texture" id=1]
 [ext_resource path="res://Assets/NewGUI/main menu/panel.png" type="Texture" id=2]
@@ -12,6 +12,26 @@
 [ext_resource path="res://Assets/NewGUI/level/4_default.png" type="Texture" id=10]
 [ext_resource path="res://Assets/NewGUI/Button/btn_close.png" type="Texture" id=11]
 [ext_resource path="res://Layout/Buttons/Back.gd" type="Script" id=12]
+[ext_resource path="res://Assets/NewGUI/level/7_clicked.png" type="Texture" id=13]
+[ext_resource path="res://Assets/NewGUI/level/6_default.png" type="Texture" id=14]
+[ext_resource path="res://Assets/NewGUI/level/6_clicked.png" type="Texture" id=15]
+[ext_resource path="res://Assets/NewGUI/level/7_default.png" type="Texture" id=16]
+[ext_resource path="res://Assets/NewGUI/level/8_clicked.png" type="Texture" id=17]
+[ext_resource path="res://Assets/NewGUI/level/8_default.png" type="Texture" id=18]
+[ext_resource path="res://Assets/NewGUI/level/9_clicked.png" type="Texture" id=19]
+[ext_resource path="res://Assets/NewGUI/level/9_default.png" type="Texture" id=20]
+[ext_resource path="res://Assets/NewGUI/level/10_clicked.png" type="Texture" id=21]
+[ext_resource path="res://Assets/NewGUI/level/10_default.png" type="Texture" id=22]
+[ext_resource path="res://Assets/NewGUI/level/13_clicked.png" type="Texture" id=23]
+[ext_resource path="res://Assets/NewGUI/level/12_default.png" type="Texture" id=24]
+[ext_resource path="res://Assets/NewGUI/level/12_clicked.png" type="Texture" id=25]
+[ext_resource path="res://Assets/NewGUI/level/14_clicked.png" type="Texture" id=26]
+[ext_resource path="res://Assets/NewGUI/level/11_default.png" type="Texture" id=27]
+[ext_resource path="res://Assets/NewGUI/level/15_default.png" type="Texture" id=28]
+[ext_resource path="res://Assets/NewGUI/level/13_default.png" type="Texture" id=29]
+[ext_resource path="res://Assets/NewGUI/level/14_default.png" type="Texture" id=30]
+[ext_resource path="res://Assets/NewGUI/level/15_clicked.png" type="Texture" id=31]
+[ext_resource path="res://Assets/NewGUI/level/11_clicked.png" type="Texture" id=32]
 
 [node name="LevelSelect" type="Control"]
 anchor_right = 1.0
@@ -64,9 +84,9 @@ stretch_mode = 1
 
 [node name="Buttons" type="VBoxContainer" parent="CenterPanel"]
 margin_left = 333.0
-margin_top = 168.0
+margin_top = 229.0
 margin_right = 1033.0
-margin_bottom = 599.0
+margin_bottom = 538.0
 rect_min_size = Vector2( 700, 60 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -84,7 +104,7 @@ alignment = 1
 ] instance=ExtResource( 3 )]
 margin_left = 15.0
 margin_right = 80.0
-levelTujuan = "res://Game/Level 1.tscn"
+levelTujuan = "res://Game/Finish Level/Level 01.tscn"
 
 [node name="Level 02" parent="CenterPanel/Buttons/Row1" groups=[
 "Buttons",
@@ -92,13 +112,13 @@ levelTujuan = "res://Game/Level 1.tscn"
 margin_left = 166.0
 margin_right = 231.0
 disabled = true
-levelTujuan = "res://Game/Level 2.tscn"
+levelTujuan = "res://Game/Finish Level/Level 02.tscn"
 
 [node name="Level 03" parent="CenterPanel/Buttons/Row1" groups=[
 "Buttons",
 ] instance=ExtResource( 6 )]
 disabled = true
-levelTujuan = "res://Game/Level 3.tscn"
+levelTujuan = "res://Game/Finish Level/Level 03.tscn"
 
 [node name="Level 04" parent="CenterPanel/Buttons/Row1" groups=[
 "Buttons",
@@ -108,6 +128,7 @@ margin_right = 533.0
 disabled = true
 texture_normal = ExtResource( 10 )
 texture_pressed = ExtResource( 9 )
+levelTujuan = "res://Game/Finish Level/Level 04.tscn"
 
 [node name="Level 05" parent="CenterPanel/Buttons/Row1" groups=[
 "Buttons",
@@ -117,6 +138,7 @@ margin_right = 684.0
 disabled = true
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 8 )
+levelTujuan = "res://Game/Level 1.tscn"
 
 [node name="Row2" type="HBoxContainer" parent="CenterPanel/Buttons"]
 margin_top = 122.0
@@ -131,6 +153,9 @@ alignment = 1
 margin_left = 15.0
 margin_right = 80.0
 disabled = true
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 15 )
+levelTujuan = "res://Game/Finish Level/Level 06.tscn"
 
 [node name="Level 07" parent="CenterPanel/Buttons/Row2" groups=[
 "Buttons",
@@ -138,11 +163,15 @@ disabled = true
 margin_left = 166.0
 margin_right = 231.0
 disabled = true
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 13 )
 
 [node name="Level 08" parent="CenterPanel/Buttons/Row2" groups=[
 "Buttons",
 ] instance=ExtResource( 6 )]
 disabled = true
+texture_normal = ExtResource( 18 )
+texture_pressed = ExtResource( 17 )
 
 [node name="Level 09" parent="CenterPanel/Buttons/Row2" groups=[
 "Buttons",
@@ -150,6 +179,8 @@ disabled = true
 margin_left = 468.0
 margin_right = 533.0
 disabled = true
+texture_normal = ExtResource( 20 )
+texture_pressed = ExtResource( 19 )
 
 [node name="Level 10" parent="CenterPanel/Buttons/Row2" groups=[
 "Buttons",
@@ -157,6 +188,8 @@ disabled = true
 margin_left = 619.0
 margin_right = 684.0
 disabled = true
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 21 )
 
 [node name="Row3" type="HBoxContainer" parent="CenterPanel/Buttons"]
 margin_top = 244.0
@@ -171,6 +204,8 @@ alignment = 1
 margin_left = 15.0
 margin_right = 80.0
 disabled = true
+texture_normal = ExtResource( 27 )
+texture_pressed = ExtResource( 32 )
 
 [node name="Level 12" parent="CenterPanel/Buttons/Row3" groups=[
 "Buttons",
@@ -178,11 +213,15 @@ disabled = true
 margin_left = 166.0
 margin_right = 231.0
 disabled = true
+texture_normal = ExtResource( 24 )
+texture_pressed = ExtResource( 25 )
 
 [node name="Level 13" parent="CenterPanel/Buttons/Row3" groups=[
 "Buttons",
 ] instance=ExtResource( 6 )]
 disabled = true
+texture_normal = ExtResource( 29 )
+texture_pressed = ExtResource( 23 )
 
 [node name="Level 14" parent="CenterPanel/Buttons/Row3" groups=[
 "Buttons",
@@ -190,6 +229,8 @@ disabled = true
 margin_left = 468.0
 margin_right = 533.0
 disabled = true
+texture_normal = ExtResource( 30 )
+texture_pressed = ExtResource( 26 )
 
 [node name="Level 15" parent="CenterPanel/Buttons/Row3" groups=[
 "Buttons",
@@ -197,8 +238,11 @@ disabled = true
 margin_left = 619.0
 margin_right = 684.0
 disabled = true
+texture_normal = ExtResource( 28 )
+texture_pressed = ExtResource( 31 )
 
 [node name="Row4" type="HBoxContainer" parent="CenterPanel/Buttons"]
+visible = false
 margin_top = 366.0
 margin_right = 700.0
 margin_bottom = 431.0

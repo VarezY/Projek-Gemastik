@@ -1,8 +1,9 @@
-[gd_resource type="TileSet" load_steps=4 format=2]
+[gd_resource type="TileSet" load_steps=5 format=2]
 
 [ext_resource path="res://Assets/NewTiles/gedung.png" type="Texture" id=1]
 [ext_resource path="res://Assets/NewTiles/gedung3.png" type="Texture" id=2]
 [ext_resource path="res://Assets/NewTiles/gedung2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/NewTiles/gedung9_back.png" type="Texture" id=4]
 
 [resource]
 1/name = "gedung3"
@@ -61,3 +62,17 @@
 4/shape_one_way_margin = 0.0
 4/shapes = [  ]
 4/z_index = 0
+5/name = "gedung9_back.png 5"
+5/texture = ExtResource( 4 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 3008, 4384 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0

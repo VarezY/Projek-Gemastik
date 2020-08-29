@@ -1,6 +1,9 @@
 extends Control
 
 onready var Music = $"/root/BackgroundMusic"
+onready var Effect = $"/root/SoundEffect"
+onready var SFXButtons = $"/root/SfxButton"
+
 onready var SaveLoad = $"/root/SaveLoad"
 onready var BGMSlide = $NinePatchRect/VBoxContainer/BGMContainer/CenterContainer/BGMSlider
 onready var SFXSlide = $NinePatchRect/VBoxContainer/SFXContainer/CenterContainer/SFXSlider
@@ -42,18 +45,21 @@ func _ready():
 			CarFrame.texture = color[i]["Texture"]
 			index = i
 			pass
-	
+	SFXButtons.CallGroup()
 
 func _on_SFXSlider_value_changed(value):
 	SFXValue = value
 	$NinePatchRect/VBoxContainer/SFXContainer/Label.set_text(str(value))
-	
+	Effect.setVolume((100 / value - 1) * -10)
 
 
 func _on_BGMSlider_value_changed(value):
+	if value == 0:
+		return
 	BGMValue = value
 	$NinePatchRect/VBoxContainer/BGMContainer/Label.set_text(str(value))
-	Music.volume_db = value - 100
+	Music.volume_db = (100 / value - 1) * -10
+	print((100 / value - 1 )* -10 )
 
 func _on_Ok_pressed():
 	SaveLoad.save_setting(false, BGMValue, SFXValue, carColor)
@@ -80,3 +86,7 @@ func _on_Previous_pressed():
 
 func _on_TextureButton_pressed():
 	get_tree().change_scene("res://MainMenu.tscn")
+
+
+func _on_Credit_pressed():
+	get_tree().change_scene("res://Credit.tscn")

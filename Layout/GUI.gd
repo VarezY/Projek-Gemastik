@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+onready var SFXButtons = $"/root/SfxButton"
+
 signal ButtonPause
 signal ButtonCarStop
 signal ButtonCarGo
@@ -11,6 +13,9 @@ signal ButtonSign
 signal CircleLoad
 signal CircleNext
 signal SignDown
+
+func _ready():
+	SFXButtons.CallGroup()
 
 func _on_CarButton_toggled(button_pressed):
 	if button_pressed:

@@ -29,6 +29,29 @@
 [ext_resource path="res://Assets/NewGUI/pause/lanjut_default.png" type="Texture" id=34]
 [ext_resource path="res://Assets/NewGUI/pause/ulang_clicked.png" type="Texture" id=35]
 
+[sub_resource type="Animation" id=1]
+length = 0.8
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.8 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 780, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.8 )
+}
+
 [sub_resource type="Animation" id=2]
 length = 0.8
 tracks/0/type = "bezier"
@@ -48,34 +71,11 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 730, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( 780, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.8 )
 }
 
 [sub_resource type="Animation" id=3]
-length = 0.8
-tracks/0/type = "bezier"
-tracks/0/path = NodePath(".:rect_position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.8 )
-}
-tracks/1/type = "bezier"
-tracks/1/path = NodePath(".:rect_position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"points": PoolRealArray( 730, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.8 )
-}
-
-[sub_resource type="Animation" id=4]
 length = 0.8
 tracks/0/type = "bezier"
 tracks/0/path = NodePath(".:rect_scale:x")
@@ -98,7 +98,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.8 )
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath(".:rect_scale:x")
 tracks/0/interp = 1
@@ -141,7 +141,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PauseButton" type="TextureButton" parent="."]
+[node name="PauseButton" type="TextureButton" parent="." groups=[
+"Buttons",
+]]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -129.0
@@ -193,20 +195,26 @@ margin_bottom = 424.0
 custom_constants/separation = 42
 alignment = 1
 
-[node name="HomeButton" type="TextureButton" parent="Layout/Pause/CenterContainer/HBoxContainer"]
+[node name="HomeButton" type="TextureButton" parent="Layout/Pause/CenterContainer/HBoxContainer" groups=[
+"Buttons",
+]]
 margin_right = 79.0
 margin_bottom = 80.0
 texture_normal = ExtResource( 13 )
 texture_pressed = ExtResource( 27 )
 
-[node name="RestartButton" type="TextureButton" parent="Layout/Pause/CenterContainer/HBoxContainer"]
+[node name="RestartButton" type="TextureButton" parent="Layout/Pause/CenterContainer/HBoxContainer" groups=[
+"Buttons",
+]]
 margin_left = 121.0
 margin_right = 200.0
 margin_bottom = 80.0
 texture_normal = ExtResource( 28 )
 texture_pressed = ExtResource( 35 )
 
-[node name="ContinueButton" type="TextureButton" parent="Layout/Pause/CenterContainer/HBoxContainer"]
+[node name="ContinueButton" type="TextureButton" parent="Layout/Pause/CenterContainer/HBoxContainer" groups=[
+"Buttons",
+]]
 margin_left = 242.0
 margin_right = 321.0
 margin_bottom = 80.0
@@ -254,7 +262,9 @@ margin_top = 77.0
 margin_right = 480.0
 margin_bottom = 157.0
 
-[node name="RestartButton" type="TextureButton" parent="Layout/Kecelakaan/CenterContainer/VBoxContainer/CenterContainer"]
+[node name="RestartButton" type="TextureButton" parent="Layout/Kecelakaan/CenterContainer/VBoxContainer/CenterContainer" groups=[
+"Buttons",
+]]
 margin_left = 200.0
 margin_right = 279.0
 margin_bottom = 80.0
@@ -348,21 +358,27 @@ margin_bottom = 93.0
 custom_constants/separation = 40
 alignment = 1
 
-[node name="HomeButton" type="TextureButton" parent="Layout/NextLevel/Buttons/HBoxContainer"]
+[node name="HomeButton" type="TextureButton" parent="Layout/NextLevel/Buttons/HBoxContainer" groups=[
+"Buttons",
+]]
 margin_left = 60.0
 margin_right = 139.0
 margin_bottom = 93.0
 texture_normal = ExtResource( 25 )
 texture_pressed = ExtResource( 17 )
 
-[node name="RestartButton" type="TextureButton" parent="Layout/NextLevel/Buttons/HBoxContainer"]
+[node name="RestartButton" type="TextureButton" parent="Layout/NextLevel/Buttons/HBoxContainer" groups=[
+"Buttons",
+]]
 margin_left = 179.0
 margin_right = 258.0
 margin_bottom = 93.0
 texture_normal = ExtResource( 29 )
 texture_pressed = ExtResource( 10 )
 
-[node name="NextButton" type="TextureButton" parent="Layout/NextLevel/Buttons/HBoxContainer"]
+[node name="NextButton" type="TextureButton" parent="Layout/NextLevel/Buttons/HBoxContainer" groups=[
+"Buttons",
+]]
 margin_left = 298.0
 margin_right = 377.0
 margin_bottom = 93.0
@@ -387,9 +403,9 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 730.0
+margin_top = 780.0
 margin_right = -0.00012207
-margin_bottom = 730.0
+margin_bottom = 780.0
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -419,7 +435,7 @@ __meta__ = {
 
 [node name="TextureRect" type="TextureRect" parent="Layout/Sign/HBoxContainer"]
 margin_right = 530.0
-margin_bottom = 468.0
+margin_bottom = 467.0
 size_flags_horizontal = 3
 texture = ExtResource( 8 )
 expand = true
@@ -437,7 +453,9 @@ text = "Ini adalah rambu untuk tidak berhenti di jalan atau di pinggir jalan sam
 align = 1
 autowrap = true
 
-[node name="ContinueSignButton" type="TextureButton" parent="Layout/Sign"]
+[node name="ContinueSignButton" type="TextureButton" parent="Layout/Sign" groups=[
+"Buttons",
+]]
 margin_left = 1162.0
 margin_top = 33.0
 margin_right = 1231.0
@@ -450,8 +468,8 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Layout/Sign"]
-anims/Down = SubResource( 2 )
-anims/Up = SubResource( 3 )
+anims/Down = SubResource( 1 )
+anims/Up = SubResource( 2 )
 
 [node name="Circle" type="TextureRect" parent="."]
 visible = false
@@ -474,8 +492,8 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Circle"]
-anims/load_Level = SubResource( 4 )
-anims/next_Level = SubResource( 5 )
+anims/load_Level = SubResource( 3 )
+anims/next_Level = SubResource( 4 )
 [connection signal="toggled" from="CarButton" to="." method="_on_CarButton_toggled"]
 [connection signal="pressed" from="PauseButton" to="." method="_on_PauseButton_pressed"]
 [connection signal="pressed" from="Layout/Pause/CenterContainer/HBoxContainer/HomeButton" to="." method="_on_HomeButton_pressed"]

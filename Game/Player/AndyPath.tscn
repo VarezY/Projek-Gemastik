@@ -3,7 +3,7 @@
 [ext_resource path="res://Game/Player/AndyWhite.tres" type="SpriteFrames" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 25.102
+radius = 32.7647
 
 [node name="AndyPath" type="PathFollow2D"]
 position = Vector2( -1498.27, 468.084 )
@@ -11,8 +11,8 @@ rotate = false
 
 [node name="AndyCar" type="KinematicBody2D" parent="."]
 scale = Vector2( 0.6, 0.6 )
-collision_layer = 2147483679
-collision_mask = 31
+collision_layer = 2147483715
+collision_mask = 95
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AndyCar"]
 scale = Vector2( 0.4, 0.4 )

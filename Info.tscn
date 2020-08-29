@@ -113,7 +113,9 @@ margin_left = 118.0
 margin_right = 153.0
 margin_bottom = 200.0
 
-[node name="LeftButton" type="TextureButton" parent="NinePatchRect/VBoxContainer/HBoxContainer/CenterContainer"]
+[node name="LeftButton" type="TextureButton" parent="NinePatchRect/VBoxContainer/HBoxContainer/CenterContainer" groups=[
+"Buttons",
+]]
 margin_top = 82.0
 margin_right = 35.0
 margin_bottom = 117.0
@@ -179,7 +181,9 @@ margin_left = 574.0
 margin_right = 609.0
 margin_bottom = 200.0
 
-[node name="RightButton" type="TextureButton" parent="NinePatchRect/VBoxContainer/HBoxContainer/CenterContainer2"]
+[node name="RightButton" type="TextureButton" parent="NinePatchRect/VBoxContainer/HBoxContainer/CenterContainer2" groups=[
+"Buttons",
+]]
 margin_top = 82.0
 margin_right = 35.0
 margin_bottom = 117.0
@@ -233,7 +237,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Kembali" type="TextureButton" parent="NinePatchRect/MarginContainer"]
+[node name="Kembali" type="TextureButton" parent="NinePatchRect/MarginContainer" groups=[
+"Buttons",
+]]
 margin_right = 60.0
 margin_bottom = 22.0
 texture_normal = ExtResource( 5 )

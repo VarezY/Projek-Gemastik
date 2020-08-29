@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Game/Area/Danger.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Side/plang_right.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Side/tiang_right.png" type="Texture" id=3]
+[ext_resource path="res://Game/Area/PlangKeretaLeft1.gd" type="Script" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Down"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -52.4, 0.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -52.4 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Up"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -52.4 ]
+}
+
+[node name="Plang Kereta" type="Node2D"]
+position = Vector2( 641.66, 88.2564 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="PlangKereta3" type="Sprite" parent="."]
+position = Vector2( 2561.02, 779.695 )
+rotation = -0.914553
+scale = Vector2( 0.333333, 0.333333 )
+texture = ExtResource( 2 )
+offset = Vector2( 96.7871, -55.8142 )
+script = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlangKereta3"]
+anims/Down = SubResource( 1 )
+anims/Idle = SubResource( 2 )
+anims/Up = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="PlangKereta3"]
+wait_time = 5.0
+one_shot = true
+
+[node name="Danger2" type="Area2D" parent="PlangKereta3"]
+position = Vector2( 347.062, -17.0969 )
+scale = Vector2( 2.5, 2.5 )
+collision_layer = 7
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlangKereta3/Danger2"]
+polygon = PoolVector2Array( -89.9258, 31.0361, -6.92578, -22.9639, 36.0742, 5.03613, -42.9258, 61.0361 )
+
+[node name="TiangKereta3" type="Sprite" parent="."]
+position = Vector2( 2563.52, 773.936 )
+scale = Vector2( 0.333333, 0.333333 )
+texture = ExtResource( 3 )
+[connection signal="animation_finished" from="PlangKereta3/AnimationPlayer" to="PlangKereta3" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="PlangKereta3/Timer" to="PlangKereta3" method="_on_Timer_timeout"]

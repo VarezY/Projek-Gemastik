@@ -6,26 +6,28 @@ onready var Sign2 = $Node2D/Sign2
 onready var Sign3 = $Node2D/Sign3
 onready var Sign4 = $Node2D/Sign4
 onready var AndyCar = $Node2D/YSort/Andy
-onready var showcase = $GUI/Layout/Sign/HBoxContainer/TextureRect
 onready var Danger1 = $Node2D/Danger1/CollisionPolygon2D
 
 func _ready():
 	$Node2D/Lampu1.play()
 	$Node2D/Lampu2.play()
 	$Node2D/YSort/TrainPath2.tween.stop_all()
-	$GUI/Layout/NextLevel/TextureProgress.get_value()
 
 func _on_GUI_CircleLoad():
 	
 	print("Anime LoadLevel Selesai")
 
-func _on_GUI_ButtonCarStop():
-	AndyCar.rem = true
-
 func _on_GUI_ButtonCarGo():
-	AndyCar.start = 0
-	AndyCar.rem = false
-	pass
+	#Stop.disabled = true
+	SFX.StartEngine()
+	Andy.start = 0
+	Andy.rem = false
+
+
+func _on_GUI_ButtonCarStop():
+	#Stop.disabled = false
+	SFX.StopEngine()
+	Andy.rem = true
 
 func _on_Sign1_pressed():
 	SignExplanation(Sign1.PenjelasanRambu)
@@ -45,10 +47,6 @@ func SignExplanation(text : String):
 func changeTexture(signTexture : Texture):
 	showcase.set_texture(signTexture)
 
-func _on_Andy_Tabrakan():
-	get_tree().paused = true
-	showLayout()
-	$GUI/Layout/Kecelakaan.visible = true
 	
 
 func _on_Sign3_pressed():

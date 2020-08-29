@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/IsoKika2.tres" type="TileSet" id=1]
 [ext_resource path="res://Layout/GUI.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/IsoBangunanBesar.tres" type="TileSet" id=3]
+[ext_resource path="res://Assets/IsoBangunanBesar2.tres" type="TileSet" id=3]
 [ext_resource path="res://Assets/IsoBangunan.tres" type="TileSet" id=4]
 [ext_resource path="res://Game/Finish.tscn" type="PackedScene" id=5]
 
@@ -36,6 +36,7 @@ format = 1
 position = Vector2( 718.962, 299 )
 
 [node name="GUI" parent="." instance=ExtResource( 2 )]
+pause_mode = 2
 
 [node name="DebugCamera" type="Camera2D" parent="."]
 zoom = Vector2( 4, 4 )

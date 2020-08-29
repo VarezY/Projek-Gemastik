@@ -19,6 +19,7 @@ var i = 0
 var rem : bool = false
 
 func _ready():
+	set_process(true)
 	curves = get_curve()
 	points = curves.get_point_count()
 

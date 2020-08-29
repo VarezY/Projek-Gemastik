@@ -1,5 +1,7 @@
 extends Control
 
+onready var SFXButtons = $"/root/SfxButton"
+
 var LeveltoLoad
 var Buttons 
 var levelObject = []
@@ -10,6 +12,7 @@ func _ready():
 	for button in Buttons:
 		button.connect("pressed", self, "_on_Button_pressed", [button.levelTujuan])
 	changeLevel()
+	SFXButtons.CallGroup()
 
 func _on_Button_pressed(level):
 	get_tree().change_scene(level)
@@ -30,5 +33,3 @@ func changeLevel():
 	for index in range(levelObject.size()):
 		Buttons[index].get_node("TextureProgress").value = levelObject[index]["point"]
 		Buttons[index].disabled = false
-		pass
-	pass
