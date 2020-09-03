@@ -1,6 +1,7 @@
 extends Control
 
 onready var SFXButtons = $"/root/SfxButton"
+onready var SFX = $"/root/SoundEffect"
 
 var LeveltoLoad
 var Buttons 
@@ -15,7 +16,11 @@ func _ready():
 	SFXButtons.CallGroup()
 
 func _on_Button_pressed(level):
+	if level == "res://MainMenu.tscn":
+		get_tree().change_scene(level)
+		return
 	get_tree().change_scene(level)
+	SFX.unpauseCarStop()
 
 func load_game():
 	var save_game = File.new()

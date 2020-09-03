@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Side/plang_right.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Side/tiang_right.png" type="Texture" id=2]
 [ext_resource path="res://Game/Level1/PlangKereta2.gd" type="Script" id=3]
 [ext_resource path="res://Game/Area/PlangKereta2.gd" type="Script" id=4]
+[ext_resource path="res://Game/Area/Danger.gd" type="Script" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Down"
@@ -75,6 +76,13 @@ anims/Up = SubResource( 3 )
 wait_time = 5.0
 one_shot = true
 
+[node name="Danger" type="Area2D" parent="PlangKereta3"]
+script = ExtResource( 5 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlangKereta3/Danger"]
+position = Vector2( -83.6968, -7.76367 )
+polygon = PoolVector2Array( -96.224, 156.218, 55.7178, 49.155, 71.1514, 161.401, -50.917, 242.78 )
+
 [node name="TiangKereta3" type="Sprite" parent="."]
 position = Vector2( 3106, 1752.2 )
 rotation = -2.12874e-08
@@ -82,3 +90,4 @@ scale = Vector2( 0.571428, 0.571428 )
 texture = ExtResource( 2 )
 [connection signal="animation_finished" from="PlangKereta3/AnimationPlayer" to="PlangKereta3" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="PlangKereta3/Timer" to="PlangKereta3" method="_on_Timer_timeout"]
+[connection signal="Pelanggaran" from="PlangKereta3/Danger" to="." method="_on_Danger_Pelanggaran"]

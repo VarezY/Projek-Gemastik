@@ -40,7 +40,7 @@ _data = {
 ] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 currentLevel = 1
-Points = 1
+Points = 2
 level = "res://Game/Finish Level/Level 02.tscn"
 
 [node name="Road" parent="Node2D" index="0"]

@@ -30,6 +30,11 @@ func Crusing():
 func FinishAll():
 	$CarCrusing.stop()
 	$CarStop.stream_paused = true
+	#$CarStop.stop()
+	#$CarStop.stream_paused = false
 
 func _on_CarStart_finished():
 	$CarCrusing.play()
+
+func unpauseCarStop():
+	$CarStop.stream_paused = false

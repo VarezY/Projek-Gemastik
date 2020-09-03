@@ -82,123 +82,136 @@ texture = ExtResource( 2 )
 expand = true
 stretch_mode = 1
 
-[node name="Buttons" type="VBoxContainer" parent="CenterPanel"]
-margin_left = 333.0
-margin_top = 229.0
-margin_right = 1033.0
-margin_bottom = 538.0
+[node name="Buttons" type="VBoxContainer" parent="CenterPanel/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -34.3784
+margin_bottom = -2.37842
 rect_min_size = Vector2( 700, 60 )
 size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 57
+size_flags_vertical = 0
+custom_constants/separation = 142
 alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Row1" type="HBoxContainer" parent="CenterPanel/Buttons"]
-margin_right = 700.0
-margin_bottom = 65.0
+[node name="Row1" type="HBoxContainer" parent="CenterPanel/Panel/Buttons"]
+margin_top = 155.0
+margin_right = 900.0
+margin_bottom = 220.0
 custom_constants/separation = 86
 alignment = 1
 
-[node name="Level 01" parent="CenterPanel/Buttons/Row1" groups=[
+[node name="Level 01" parent="CenterPanel/Panel/Buttons/Row1" groups=[
 "Buttons",
 ] instance=ExtResource( 3 )]
-margin_left = 15.0
-margin_right = 80.0
+margin_left = 115.0
+margin_right = 180.0
 levelTujuan = "res://Game/Finish Level/Level 01.tscn"
 
-[node name="Level 02" parent="CenterPanel/Buttons/Row1" groups=[
+[node name="Level 02" parent="CenterPanel/Panel/Buttons/Row1" groups=[
 "Buttons",
 ] instance=ExtResource( 5 )]
-margin_left = 166.0
-margin_right = 231.0
+margin_left = 266.0
+margin_right = 331.0
 disabled = true
 levelTujuan = "res://Game/Finish Level/Level 02.tscn"
 
-[node name="Level 03" parent="CenterPanel/Buttons/Row1" groups=[
+[node name="Level 03" parent="CenterPanel/Panel/Buttons/Row1" groups=[
 "Buttons",
 ] instance=ExtResource( 6 )]
+margin_left = 417.0
+margin_right = 482.0
 disabled = true
 levelTujuan = "res://Game/Finish Level/Level 03.tscn"
 
-[node name="Level 04" parent="CenterPanel/Buttons/Row1" groups=[
+[node name="Level 04" parent="CenterPanel/Panel/Buttons/Row1" groups=[
 "Buttons",
 ] instance=ExtResource( 6 )]
-margin_left = 468.0
-margin_right = 533.0
+margin_left = 568.0
+margin_right = 633.0
 disabled = true
 texture_normal = ExtResource( 10 )
 texture_pressed = ExtResource( 9 )
 levelTujuan = "res://Game/Finish Level/Level 04.tscn"
 
-[node name="Level 05" parent="CenterPanel/Buttons/Row1" groups=[
+[node name="Level 05" parent="CenterPanel/Panel/Buttons/Row1" groups=[
 "Buttons",
 ] instance=ExtResource( 6 )]
-margin_left = 619.0
-margin_right = 684.0
+margin_left = 719.0
+margin_right = 784.0
 disabled = true
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 8 )
 levelTujuan = "res://Game/Level 1.tscn"
 
-[node name="Row2" type="HBoxContainer" parent="CenterPanel/Buttons"]
-margin_top = 122.0
-margin_right = 700.0
-margin_bottom = 187.0
+[node name="Row2" type="HBoxContainer" parent="CenterPanel/Panel/Buttons"]
+margin_top = 362.0
+margin_right = 900.0
+margin_bottom = 427.0
 custom_constants/separation = 86
 alignment = 1
 
-[node name="Level 06" parent="CenterPanel/Buttons/Row2" groups=[
+[node name="Level 06" parent="CenterPanel/Panel/Buttons/Row2" groups=[
 "Buttons",
 ] instance=ExtResource( 3 )]
-margin_left = 15.0
-margin_right = 80.0
+margin_left = 115.0
+margin_right = 180.0
 disabled = true
 texture_normal = ExtResource( 14 )
 texture_pressed = ExtResource( 15 )
 levelTujuan = "res://Game/Finish Level/Level 06.tscn"
 
-[node name="Level 07" parent="CenterPanel/Buttons/Row2" groups=[
+[node name="Level 07" parent="CenterPanel/Panel/Buttons/Row2" groups=[
 "Buttons",
 ] instance=ExtResource( 5 )]
-margin_left = 166.0
-margin_right = 231.0
+margin_left = 266.0
+margin_right = 331.0
 disabled = true
 texture_normal = ExtResource( 16 )
 texture_pressed = ExtResource( 13 )
+levelTujuan = "res://Game/Finish Level/Level 07.tscn"
 
-[node name="Level 08" parent="CenterPanel/Buttons/Row2" groups=[
+[node name="Level 08" parent="CenterPanel/Panel/Buttons/Row2" groups=[
 "Buttons",
 ] instance=ExtResource( 6 )]
+margin_left = 417.0
+margin_right = 482.0
 disabled = true
 texture_normal = ExtResource( 18 )
 texture_pressed = ExtResource( 17 )
+levelTujuan = "res://Game/Finish Level/Level 08.tscn"
 
-[node name="Level 09" parent="CenterPanel/Buttons/Row2" groups=[
+[node name="Level 09" parent="CenterPanel/Panel/Buttons/Row2" groups=[
 "Buttons",
 ] instance=ExtResource( 6 )]
-margin_left = 468.0
-margin_right = 533.0
+margin_left = 568.0
+margin_right = 633.0
 disabled = true
 texture_normal = ExtResource( 20 )
 texture_pressed = ExtResource( 19 )
+levelTujuan = "res://Game/Finish Level/Level 09.tscn"
 
-[node name="Level 10" parent="CenterPanel/Buttons/Row2" groups=[
+[node name="Level 10" parent="CenterPanel/Panel/Buttons/Row2" groups=[
 "Buttons",
 ] instance=ExtResource( 6 )]
-margin_left = 619.0
-margin_right = 684.0
+margin_left = 719.0
+margin_right = 784.0
 disabled = true
 texture_normal = ExtResource( 22 )
 texture_pressed = ExtResource( 21 )
+levelTujuan = "res://Game/Finish Level/Level 10.tscn"
 
-[node name="Row3" type="HBoxContainer" parent="CenterPanel/Buttons"]
+[node name="Row3" type="HBoxContainer" parent="CenterPanel/Panel/Buttons"]
+visible = false
 margin_top = 244.0
 margin_right = 700.0
 margin_bottom = 309.0
 custom_constants/separation = 86
 alignment = 1
 
-[node name="Level 11" parent="CenterPanel/Buttons/Row3" groups=[
+[node name="Level 11" parent="CenterPanel/Panel/Buttons/Row3" groups=[
 "Buttons",
 ] instance=ExtResource( 3 )]
 margin_left = 15.0
@@ -207,7 +220,7 @@ disabled = true
 texture_normal = ExtResource( 27 )
 texture_pressed = ExtResource( 32 )
 
-[node name="Level 12" parent="CenterPanel/Buttons/Row3" groups=[
+[node name="Level 12" parent="CenterPanel/Panel/Buttons/Row3" groups=[
 "Buttons",
 ] instance=ExtResource( 5 )]
 margin_left = 166.0
@@ -216,14 +229,14 @@ disabled = true
 texture_normal = ExtResource( 24 )
 texture_pressed = ExtResource( 25 )
 
-[node name="Level 13" parent="CenterPanel/Buttons/Row3" groups=[
+[node name="Level 13" parent="CenterPanel/Panel/Buttons/Row3" groups=[
 "Buttons",
 ] instance=ExtResource( 6 )]
 disabled = true
 texture_normal = ExtResource( 29 )
 texture_pressed = ExtResource( 23 )
 
-[node name="Level 14" parent="CenterPanel/Buttons/Row3" groups=[
+[node name="Level 14" parent="CenterPanel/Panel/Buttons/Row3" groups=[
 "Buttons",
 ] instance=ExtResource( 6 )]
 margin_left = 468.0
@@ -232,7 +245,7 @@ disabled = true
 texture_normal = ExtResource( 30 )
 texture_pressed = ExtResource( 26 )
 
-[node name="Level 15" parent="CenterPanel/Buttons/Row3" groups=[
+[node name="Level 15" parent="CenterPanel/Panel/Buttons/Row3" groups=[
 "Buttons",
 ] instance=ExtResource( 6 )]
 margin_left = 619.0
@@ -241,7 +254,7 @@ disabled = true
 texture_normal = ExtResource( 28 )
 texture_pressed = ExtResource( 31 )
 
-[node name="Row4" type="HBoxContainer" parent="CenterPanel/Buttons"]
+[node name="Row4" type="HBoxContainer" parent="CenterPanel/Panel/Buttons"]
 visible = false
 margin_top = 366.0
 margin_right = 700.0
@@ -249,33 +262,33 @@ margin_bottom = 431.0
 custom_constants/separation = 86
 alignment = 1
 
-[node name="Level 16" parent="CenterPanel/Buttons/Row4" groups=[
+[node name="Level 16" parent="CenterPanel/Panel/Buttons/Row4" groups=[
 "Buttons",
 ] instance=ExtResource( 3 )]
 margin_left = 15.0
 margin_right = 80.0
 disabled = true
 
-[node name="Level 17" parent="CenterPanel/Buttons/Row4" groups=[
+[node name="Level 17" parent="CenterPanel/Panel/Buttons/Row4" groups=[
 "Buttons",
 ] instance=ExtResource( 5 )]
 margin_left = 166.0
 margin_right = 231.0
 disabled = true
 
-[node name="Level 18" parent="CenterPanel/Buttons/Row4" groups=[
+[node name="Level 18" parent="CenterPanel/Panel/Buttons/Row4" groups=[
 "Buttons",
 ] instance=ExtResource( 6 )]
 disabled = true
 
-[node name="Level 19" parent="CenterPanel/Buttons/Row4" groups=[
+[node name="Level 19" parent="CenterPanel/Panel/Buttons/Row4" groups=[
 "Buttons",
 ] instance=ExtResource( 6 )]
 margin_left = 468.0
 margin_right = 533.0
 disabled = true
 
-[node name="Level 20" parent="CenterPanel/Buttons/Row4" groups=[
+[node name="Level 20" parent="CenterPanel/Panel/Buttons/Row4" groups=[
 "Buttons",
 ] instance=ExtResource( 6 )]
 margin_left = 619.0

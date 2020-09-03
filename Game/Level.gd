@@ -71,6 +71,12 @@ func _on_Andy_Tabrakan():
 	$GUI/Layout/Kecelakaan.visible = true
 	
 func _on_GUI_CircleNext():
+	if level == "res://LevelSelect.tscn":
+		get_tree().paused = false
+		SFX.StopEngine()
+		SFX.FinishAll()
+		get_tree().change_scene("res://MainMenu.tscn")
+		get_tree().change_scene("res://LevelSelect.tscn")
 	get_tree().change_scene(level)
 
 func _on_GUI_ButtonSign():
