@@ -115,6 +115,8 @@ position = Vector2( 4716.06, 2777.66 )
 
 [node name="Finish" parent="Node2D" index="4"]
 position = Vector2( 1494.96, -1977 )
+collision_layer = 64
+collision_mask = 2147483712
 
 [node name="traffic_light4" type="Sprite" parent="Node2D" index="5"]
 position = Vector2( 1588.47, 852.741 )

@@ -51,17 +51,37 @@ position = Vector2( 738.768, -348.298 )
 scale = Vector2( 0.496085, 0.496085 )
 texture = ExtResource( 19 )
 
-[node name="team_right4" type="Sprite" parent="Node2D" index="2"]
+[node name="gemastik2_right" type="Sprite" parent="Node2D" index="2"]
+position = Vector2( 174.236, -676.694 )
+scale = Vector2( 0.496085, 0.496085 )
+texture = ExtResource( 19 )
+
+[node name="gemastik2_right2" type="Sprite" parent="Node2D" index="3"]
+position = Vector2( 452.024, -519.103 )
+scale = Vector2( 0.496085, 0.496085 )
+texture = ExtResource( 19 )
+
+[node name="gemastik2_right4" type="Sprite" parent="Node2D" index="4"]
+position = Vector2( 1040.69, -173.883 )
+scale = Vector2( 0.496085, 0.496085 )
+texture = ExtResource( 19 )
+
+[node name="gemastik2_right5" type="Sprite" parent="Node2D" index="5"]
+position = Vector2( 1378.59, 19.3973 )
+scale = Vector2( 0.496085, 0.496085 )
+texture = ExtResource( 19 )
+
+[node name="team_right4" type="Sprite" parent="Node2D" index="6"]
 position = Vector2( 766.014, -1928.52 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 18 )
 
-[node name="LampuLL" type="Sprite" parent="Node2D" index="3"]
+[node name="LampuLL" type="Sprite" parent="Node2D" index="7"]
 position = Vector2( -260.743, -914.187 )
 texture = ExtResource( 12 )
 
 [node name="Gedung" parent="Node2D/YSort" index="0"]
-tile_data = PoolIntArray( -3538992, 5, 0, -2555895, 0, 0, -1310774, 0, 0, -655362, 2, 0 )
+tile_data = PoolIntArray( -3538992, 5, 0, -2555895, 0, 0, -1310774, 0, 0, -524290, 536870914, 0 )
 
 [node name="Toko" parent="Node2D/YSort" index="1"]
 tile_data = PoolIntArray( -3997729, 4, 0, -917452, 4, 0, -524304, 3, 0 )
@@ -90,10 +110,10 @@ MaksimalKecepatan = 224
 [node name="CarPath" parent="Node2D/YSort/Car" index="0" instance=ExtResource( 15 )]
 position = Vector2( 2137.6, 597.501 )
 
-[node name="Finish" parent="Node2D" index="5"]
+[node name="Finish" parent="Node2D" index="9"]
 position = Vector2( 1879.63, 1088.63 )
 
-[node name="Sign" type="TextureButton" parent="Node2D" index="6" groups=[
+[node name="Sign" type="TextureButton" parent="Node2D" index="10" groups=[
 "Sign",
 ]]
 margin_left = -91.4075
@@ -112,7 +132,7 @@ __meta__ = {
 }
 PenjelasanRambu = "Dilarang berjalan terus, wajib berhenti sesaat dan meneruskan perjalanan setelah mendapat kepastian aman dari lalu lintas arah lainnya"
 
-[node name="Sign2" type="TextureButton" parent="Node2D" index="7" groups=[
+[node name="Sign2" type="TextureButton" parent="Node2D" index="11" groups=[
 "Sign",
 ]]
 margin_left = 1409.98
@@ -131,34 +151,34 @@ __meta__ = {
 }
 PenjelasanRambu = "Wajib mengikuti salah satu arah yang di tunjuk"
 
-[node name="LampuLL2" type="Sprite" parent="Node2D" index="8"]
+[node name="LampuLL2" type="Sprite" parent="Node2D" index="12"]
 position = Vector2( -157.877, -854.132 )
 texture = ExtResource( 12 )
 flip_h = true
 
-[node name="Lampu2" parent="Node2D" index="9" groups=[
+[node name="Lampu2" parent="Node2D" index="13" groups=[
 "LampuLL",
 ] instance=ExtResource( 13 )]
 position = Vector2( -262.921, -804.265 )
 frame = 0
 flip_h = true
 
-[node name="Lampu3" parent="Node2D" index="10" groups=[
+[node name="Lampu3" parent="Node2D" index="14" groups=[
 "LampuLL",
 ] instance=ExtResource( 13 )]
 position = Vector2( -367.213, -862.005 )
 
-[node name="gemastik_right" type="Sprite" parent="Node2D" index="11"]
+[node name="gemastik_right" type="Sprite" parent="Node2D" index="15"]
 position = Vector2( 617.839, -1990.31 )
 scale = Vector2( 0.579675, 0.579675 )
 texture = ExtResource( 17 )
 
-[node name="team_right" type="Sprite" parent="Node2D" index="12"]
+[node name="team_right" type="Sprite" parent="Node2D" index="16"]
 position = Vector2( 414.432, -1978.15 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 18 )
 
-[node name="Danger" type="Area2D" parent="Node2D" index="13"]
+[node name="Danger" type="Area2D" parent="Node2D" index="17"]
 script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Danger" index="0" groups=[
@@ -171,7 +191,7 @@ polygon = PoolVector2Array( -261.025, -851.487, -187.839, -894.621, -107.936, -8
 ]]
 polygon = PoolVector2Array( -261.025, -754.613, -332.442, -712.541, -415.174, -765.22, -348.706, -802.697 )
 
-[node name="Danger2" type="Area2D" parent="Node2D" index="14"]
+[node name="Danger2" type="Area2D" parent="Node2D" index="18"]
 collision_layer = 9
 collision_mask = 8
 script = ExtResource( 14 )
@@ -185,26 +205,6 @@ disabled = true
 
 [node name="DebugCamera" parent="." index="2"]
 position = Vector2( 170.614, -673.477 )
-
-[node name="gemastik2_right" type="Sprite" parent="." index="3"]
-position = Vector2( 174.236, -676.694 )
-scale = Vector2( 0.496085, 0.496085 )
-texture = ExtResource( 19 )
-
-[node name="gemastik2_right2" type="Sprite" parent="." index="4"]
-position = Vector2( 452.024, -519.103 )
-scale = Vector2( 0.496085, 0.496085 )
-texture = ExtResource( 19 )
-
-[node name="gemastik2_right3" type="Sprite" parent="." index="5"]
-position = Vector2( 1040.69, -173.883 )
-scale = Vector2( 0.496085, 0.496085 )
-texture = ExtResource( 19 )
-
-[node name="gemastik2_right4" type="Sprite" parent="." index="6"]
-position = Vector2( 1378.59, 19.3973 )
-scale = Vector2( 0.496085, 0.496085 )
-texture = ExtResource( 19 )
 [connection signal="Tabrakan" from="Node2D/YSort/Andy" to="." method="_on_Andy_Tabrakan"]
 [connection signal="Finish" from="Node2D/Finish" to="." method="_on_Finish_Finish"]
 [connection signal="TimeOut" from="Node2D/Finish" to="." method="_on_Finish_TimeOut"]

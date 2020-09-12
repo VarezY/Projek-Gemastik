@@ -129,7 +129,7 @@ radius = 27.1639
 ] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 currentLevel = 8
-Points = 1
+Points = 2
 level = "res://MainMenu.tscn"
 
 [node name="Road" parent="Node2D" index="0"]

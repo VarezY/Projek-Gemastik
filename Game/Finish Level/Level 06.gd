@@ -36,6 +36,7 @@ func _on_Trigger_body_entered(body):
 	pass
 
 func _on_Trigger_Trigger():
+	$Node2D/Node2D/PlangKereta3/AnimationPlayer.play("Down")
 	$"Node2D/Plang Kereta/PlangKereta3/AnimationPlayer".play("Down")
 	var trains = get_tree().get_nodes_in_group("Train")
 	for train in trains:

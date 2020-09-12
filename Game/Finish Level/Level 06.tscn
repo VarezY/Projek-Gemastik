@@ -31,37 +31,37 @@ _data = {
 
 [sub_resource type="Curve2D" id=2]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -2818.36, 305.247, 0, 0, 0, 0, -1480.89, 1076.39, 0, 0, 0, 0, 99.1505, 159.89, 0, 0, 0, 0, 1665.98, 1076.39, 0, 0, 0, 0, 2723.12, 467.593, 0, 0, 0, 0, 5776.71, 2232.29, 0, 0, 0, 0, 7403.34, 1294.01 )
+"points": PoolVector2Array( 0, 0, 0, 0, -2442.61, 522.667, 0, 0, 0, 0, -1491.75, 1075.08, 0, 0, 0, 0, 1217.94, -485.332 )
 }
 
 [sub_resource type="Curve2D" id=3]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -2442.61, 522.667, 0, 0, 0, 0, -1491.75, 1075.08, 0, 0, 0, 0, 1217.94, -485.332 )
+"points": PoolVector2Array( 0, 0, 0, 0, 4087.76, -2112.13, 0, 0, 0, 0, 125.296, 187.319, 0, 0, 0, 0, 1658.42, 1070.78, 0, 0, 0, 0, 2720.82, 461.727, 0, 0, 0, 0, 5781.75, 2231.73, 0, 0, 0, 0, 7440.88, 1255.31, 0, 0, 0, 0, 7113.12, 1003.87 )
 }
 
 [sub_resource type="Curve2D" id=4]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 4087.76, -2112.13, 0, 0, 0, 0, 135.315, 201.883, 0, 0, 0, 0, 1642.87, 1075.87, 0, 0, 0, 0, 2709.18, 470.583, 0, 0, 0, 0, 5766.17, 2252.05, 0, 0, 0, 0, 7440.88, 1255.31, 0, 0, 0, 0, 7113.12, 1003.87 )
+"points": PoolVector2Array( 0, 0, 0, 0, -2859.46, 1858.45, 0, 0, 0, 0, 1217.21, -475.876 )
 }
 
 [sub_resource type="Curve2D" id=5]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -2859.46, 1858.45, 0, 0, 0, 0, 1217.21, -475.876 )
+"points": PoolVector2Array( 0, 0, 0, 0, -73.4973, 1933.06, 0, 0, 0, 0, -3496.48, -22.4165 )
 }
 
 [sub_resource type="Curve2D" id=6]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -73.4973, 1933.06, 0, 0, 0, 0, -3496.48, -22.4165 )
+"points": PoolVector2Array( 0, 0, 0, 0, 7806.82, 1107.57, 0, 0, 0, 0, 4406.82, 3059.57 )
 }
 
 [sub_resource type="Curve2D" id=7]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 7806.82, 1107.57, 0, 0, 0, 0, 4406.82, 3059.57 )
+"points": PoolVector2Array( 0, 0, 0, 0, -2993.99, 193.482, 0, 0, 0, 0, -1496.62, 1077.98, 0, 0, 0, 0, 86.0497, 155.318, 0, 0, 0, 0, 1657.5, 1082.47, 0, 0, 0, 0, 2710.37, 478.587, 0, 0, 0, 0, 5790.98, 2258.46, 0, 0, 0, 0, 4447.76, 3056.26 )
 }
 
 [sub_resource type="Curve2D" id=8]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -2993.99, 193.482, 0, 0, 0, 0, -1496.62, 1077.98, 0, 0, 0, 0, 86.0497, 155.318, 0, 0, 0, 0, 1657.5, 1082.47, 0, 0, 0, 0, 2710.37, 478.587, 0, 0, 0, 0, 5790.98, 2258.46, 0, 0, 0, 0, 4447.76, 3056.26 )
+"points": PoolVector2Array( 0, 0, 0, 0, -2818.36, 305.247, 0, 0, 0, 0, -1480.89, 1076.39, 0, 0, 0, 0, 99.1505, 159.89, 0, 0, 0, 0, 1665.98, 1076.39, 0, 0, 0, 0, 2723.12, 467.593, 0, 0, 0, 0, 5776.71, 2232.29, 0, 0, 0, 0, 7403.34, 1294.01 )
 }
 
 [sub_resource type="Curve2D" id=9]
@@ -111,59 +111,59 @@ MaksimalKecepatan = 218
 [node name="PoliceCar" parent="Node2D/YSort/Police" index="0" instance=ExtResource( 21 )]
 position = Vector2( -52.5533, 291.711 )
 
-[node name="Andy" type="Path2D" parent="Node2D/YSort" index="3"]
+[node name="Car" type="Path2D" parent="Node2D/YSort" index="3"]
 curve = SubResource( 2 )
-script = ExtResource( 5 )
-MaksimalKecepatan = 220
-
-[node name="AndyPath" parent="Node2D/YSort/Andy" index="0" instance=ExtResource( 3 )]
-position = Vector2( -2818.36, 305.247 )
-
-[node name="Car" type="Path2D" parent="Node2D/YSort" index="4"]
-curve = SubResource( 3 )
 script = ExtResource( 18 )
 MaksimalKecepatan = 240
 
 [node name="CarPath" parent="Node2D/YSort/Car" index="0" instance=ExtResource( 20 )]
 position = Vector2( -2442.61, 522.667 )
 
-[node name="Ambulance" type="Path2D" parent="Node2D/YSort" index="5"]
-curve = SubResource( 4 )
+[node name="Ambulance" type="Path2D" parent="Node2D/YSort" index="4"]
+curve = SubResource( 3 )
 script = ExtResource( 17 )
-MaksimalKecepatan = 228
+MaksimalKecepatan = 244
 
 [node name="AmbulancePath" parent="Node2D/YSort/Ambulance" index="0" instance=ExtResource( 16 )]
 position = Vector2( 4087.76, -2112.13 )
 
-[node name="Car2" type="Path2D" parent="Node2D/YSort" index="6"]
-curve = SubResource( 5 )
+[node name="Car2" type="Path2D" parent="Node2D/YSort" index="5"]
+curve = SubResource( 4 )
 script = ExtResource( 18 )
 MaksimalKecepatan = 211
 
 [node name="CarPath" parent="Node2D/YSort/Car2" index="0" instance=ExtResource( 20 )]
 position = Vector2( -2859.46, 1858.45 )
 
-[node name="Car3" type="Path2D" parent="Node2D/YSort" index="7"]
-curve = SubResource( 6 )
+[node name="Car3" type="Path2D" parent="Node2D/YSort" index="6"]
+curve = SubResource( 5 )
 script = ExtResource( 18 )
 MaksimalKecepatan = 194
 
 [node name="CarPath" parent="Node2D/YSort/Car3" index="0" instance=ExtResource( 20 )]
 position = Vector2( -73.4973, 1933.06 )
 
-[node name="Police2" type="Path2D" parent="Node2D/YSort" index="8"]
-curve = SubResource( 7 )
+[node name="Police2" type="Path2D" parent="Node2D/YSort" index="7"]
+curve = SubResource( 6 )
 script = ExtResource( 19 )
 
 [node name="PoliceCar" parent="Node2D/YSort/Police2" index="0" instance=ExtResource( 21 )]
 position = Vector2( 7806.82, 1107.57 )
 
-[node name="Car4" type="Path2D" parent="Node2D/YSort" index="9"]
-curve = SubResource( 8 )
+[node name="Car4" type="Path2D" parent="Node2D/YSort" index="8"]
+curve = SubResource( 7 )
 script = ExtResource( 18 )
 
 [node name="CarPath" parent="Node2D/YSort/Car4" index="0" instance=ExtResource( 20 )]
 position = Vector2( -2993.99, 193.482 )
+
+[node name="Andy" type="Path2D" parent="Node2D/YSort" index="9"]
+curve = SubResource( 8 )
+script = ExtResource( 5 )
+MaksimalKecepatan = 220
+
+[node name="AndyPath" parent="Node2D/YSort/Andy" index="0" instance=ExtResource( 3 )]
+position = Vector2( -2818.36, 305.247 )
 
 [node name="Finish" parent="Node2D" index="4"]
 position = Vector2( 6709.91, 1657.19 )
@@ -202,10 +202,7 @@ position = Vector2( 87.5638, 201.145 )
 frame = 0
 flip_h = true
 
-[node name="Plang Kereta" parent="Node2D" index="11" instance=ExtResource( 9 )]
-position = Vector2( 1024.88, 425.799 )
-
-[node name="Kereta1" type="Path2D" parent="Node2D" index="12" groups=[
+[node name="Kereta1" type="Path2D" parent="Node2D" index="11" groups=[
 "Train",
 ]]
 curve = SubResource( 9 )
@@ -219,7 +216,7 @@ rotate = false
 scale = Vector2( 0.45, 0.45 )
 texture = ExtResource( 11 )
 
-[node name="Kereta2" type="Path2D" parent="Node2D" index="13" groups=[
+[node name="Kereta2" type="Path2D" parent="Node2D" index="12" groups=[
 "Train",
 ]]
 curve = SubResource( 10 )
@@ -232,6 +229,9 @@ rotate = false
 
 [node name="Sprite" type="Sprite" parent="Node2D/Kereta2/PathFollow2D" index="0"]
 texture = ExtResource( 12 )
+
+[node name="Plang Kereta" parent="Node2D" index="13" instance=ExtResource( 9 )]
+position = Vector2( 1024.88, 425.799 )
 
 [node name="Node2D" parent="Node2D" index="14" instance=ExtResource( 10 )]
 position = Vector2( 1837.49, -93.6345 )
@@ -272,7 +272,7 @@ polygon = PoolVector2Array( -1603.04, 1035.63, -1538.61, 1076.08, -1495.91, 1046
 script = ExtResource( 23 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Danger2" index="0"]
-position = Vector2( -18.0109, 5.2973 )
+position = Vector2( -52.5532, 0 )
 polygon = PoolVector2Array( -22.5855, 228.133, 18.7335, 266.273, 54.7552, 218.598, 22.9714, 200.587 )
 
 [node name="gemastik2_right" type="Sprite" parent="." index="3"]

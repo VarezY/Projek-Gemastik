@@ -22,7 +22,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -474.167, 995.402, 0, 0, 0, 0, 1134.67, 55.576, 0, 0, 0, 0, 2805.64, 1019.34, 0, 0, 0, 0, 4026.43, 309.713, 0, 0, 0, 0, 5595.84, 1221.99, 0, 0, 0, 0, 7352.77, 218.053 )
+"points": PoolVector2Array( 0, 0, 0, 0, -474.167, 995.402, 0, 0, 0, 0, 1134.67, 55.576, 0, 0, 0, 0, 2805.64, 1019.34, 0, 0, 0, 0, 4026.43, 309.713, 0, 0, 0, 0, 5595.84, 1221.99, 0, 0, 0, 0, 7352.77, 218.053, 0, 0, 0, 0, 8067.5, -190.207 )
 }
 
 [sub_resource type="Curve2D" id=2]
@@ -167,7 +167,8 @@ polygon = PoolVector2Array( 5437.86, 1216.17, 5526.26, 1165.98, 5592.94, 1209.05
 position = Vector2( 6235.31, 1193.73 )
 
 [node name="gemastik_left" type="Sprite" parent="." index="3"]
-position = Vector2( 6519.33, 568.399 )
+position = Vector2( 6558.01, 593.626 )
+scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 19 )
 [connection signal="Tabrakan" from="Node2D/YSort/Andy" to="." method="_on_Andy_Tabrakan"]
 [connection signal="frame_changed" from="Node2D/Lampu3" to="." method="_on_Lampu3_frame_changed"]

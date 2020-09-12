@@ -67,17 +67,17 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 3998.99, 1272.58, 0, 0, 0, 0, 2254.36, 1901.16, 0, 0, 0, 0, 2269.48, 1669.33, 0, 0, 0, 0, 4163.42, 1123.09, 0, 0, 0, 0, 4316.16, 314.162, 0, 0, 0, 0, 3880.58, -19.5925, 0, 0, 0, 0, 1300.16, -1498.12 )
 }
 
-[sub_resource type="Curve2D" id=8]
+[sub_resource type="Curve2D" id=7]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -678.633, 484.108, 0, 0, 0, 0, -1063.61, 258.335, 0, 0, 0, 0, -1975.78, 802.101, 0, 0, 0, 0, -1173.78, 1253.18 )
 }
 
-[sub_resource type="Curve2D" id=9]
+[sub_resource type="Curve2D" id=8]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1741.89, -3097.72, 0, 0, 0, 0, 5516.08, -933.338 )
 }
 
-[sub_resource type="Curve2D" id=7]
+[sub_resource type="Curve2D" id=9]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -2333.68, 1859.3, 0, 0, 0, 0, -1254.1, 1241.98, 0, 0, 0, 0, -2063.57, 791.064, 0, 0, 0, 0, -1042, 205, 0, 0, 0, 0, 3.7012, 824.467, 0, 0, 0, 0, 4249.84, -1615.87, 0, 0, 0, 0, 2831.15, -2426.06 )
 }
@@ -223,7 +223,7 @@ script = ExtResource( 5 )
 position = Vector2( 3998.99, 1272.58 )
 
 [node name="Police2" type="Path2D" parent="Node2D/YSort" index="8"]
-curve = SubResource( 8 )
+curve = SubResource( 7 )
 script = ExtResource( 19 )
 
 [node name="PoliceCar" parent="Node2D/YSort/Police2" index="0" instance=ExtResource( 20 )]
@@ -232,7 +232,7 @@ position = Vector2( -678.633, 484.108 )
 [node name="Car5" type="Path2D" parent="Node2D/YSort" index="9" groups=[
 "Cars",
 ]]
-curve = SubResource( 9 )
+curve = SubResource( 8 )
 script = ExtResource( 22 )
 SPEED = 25
 
@@ -245,7 +245,7 @@ scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 21 )
 
 [node name="Andy" type="Path2D" parent="Node2D/YSort" index="10"]
-curve = SubResource( 7 )
+curve = SubResource( 9 )
 script = ExtResource( 4 )
 
 [node name="AndyPath" parent="Node2D/YSort/Andy" index="0" instance=ExtResource( 3 )]
@@ -259,7 +259,7 @@ script = ExtResource( 22 )
 SPEED = 27
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Node2D/YSort/Car6" index="0"]
-position = Vector2( 5483.6, -903.398 )
+position = Vector2( 6351.41, -403.845 )
 rotate = false
 
 [node name="Sprite" type="Sprite" parent="Node2D/YSort/Car6/PathFollow2D" index="0"]

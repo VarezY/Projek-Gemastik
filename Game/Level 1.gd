@@ -11,7 +11,7 @@ onready var Danger1 = $Node2D/Danger1/CollisionPolygon2D
 func _ready():
 	$Node2D/Lampu1.play()
 	$Node2D/Lampu2.play()
-	$Node2D/YSort/TrainPath2.tween.stop_all()
+	$Node2D/TrainPath2.tween.stop_all()
 
 func _on_GUI_CircleLoad():
 	
@@ -75,7 +75,7 @@ func _on_Lampu1_frame_changed():
 func _on_Trigger_Trigger():
 	$Node2D/PlangKereta/AnimationPlayer.play("Down")
 	$Node2D/PlangKereta2/AnimationPlayer.play("Down")
-	$Node2D/YSort/TrainPath2.tween.resume_all()
+	$Node2D/TrainPath2.tween.resume_all()
 
 
 func _on_Danger2_Pelanggaran():
